@@ -101,7 +101,7 @@
                       <div class="col-lg-4 col-md-4 col-sm-3 form-group">
                         <label>Department</label>
                         <select
-                          class="form-control single-select"
+                          class="form-select"
                           data-placeholder="Select a Department"
                           formControlName="usdptp"
                         >
@@ -204,7 +204,7 @@
                       <div class="clear visible-sm"></div>
                       <div class="col-lg-4 col-md-4 col-sm-6 form-group   " >
                         <label>Telephone</label>
-                        <input type="telephone" class="form-control" value="" />
+                        <input type="telephone" class="form-control"  formControlName="useptl" />
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-6 form-group ">
                         <label>Email</label>
@@ -239,7 +239,7 @@
                       <div class="col-lg-3 col-md-4 col-sm-6 form-group">
                         <label>Initial Language</label>
                         <select
-                          class="form-control single-select"
+                          class="form-select"
                           data-placeholder="Select a Language"
                           formControlName="ususlg"
                         >
@@ -259,13 +259,13 @@
                     <div class="row">
                       <div class="col-lg-3 col-md-4 col-sm-6 form-group">
                         <label>Password (New)</label>
-                        <input type="password" class="form-control" value="" />
+                        <input type="password" class="form-control" formControlName="ususpw" />
                       </div>
 
                       <div class="col-lg-3 col-md-4 col-sm-6 form-group">
                         <label>Password Expiration</label>
                         <select
-                          class="form-control single-select"
+                          class="form-select"
                           data-placeholder="Select a Expiration"
                         >
                           <option value=""></option>
@@ -284,7 +284,7 @@
 
                       <div class="col-lg-3 col-md-4 col-sm-6 form-group">
                         <label>Security Level</label>
-                        <select class="form-control">
+                        <select class="form-select" formControlName="ussncd">
                           <option value=""></option>
                           <option value="0">0</option>
                           <option value="1">1</option>
@@ -301,7 +301,7 @@
 
                       <div class="col-lg-3 col-md-4 col-sm-6 form-group">
                         <label>Authority To Update</label>
-                        <select class="form-control chosen-multi"
+                        <select class="form-select"
                         formControlName="usupfc">
                           <option value=""></option>
                             <option value="B">Both</option>
@@ -311,7 +311,7 @@
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-6 form-group">
                         <label>Approval Authority</label>
-                        <select class="form-control chosen-multi"
+                        <select class="form-select"
                         formControlName="usaptp">
                           <option value=""></option>
                           <option value="B">Both</option>
@@ -323,7 +323,7 @@
                       <div class="col-lg-3 col-md-4 col-sm-6 form-group">
                         <label>Authority To Cancel </label>
                         <select
-                          class="form-control single-select"
+                          class="form-select"
                           data-placeholder="Select"
                         >
                           <option value=""></option>
@@ -346,7 +346,7 @@
 
                       <div class="col-lg-3 col-md-4 col-sm-6 form-group">
                         <label>Use MRM</label>
-                        <select class="form-control"
+                        <select class="form-select"
                         formControlName="userMrmCode">
                           <option value="W">Web</option>
                           <option value="D">Desktop</option>
@@ -356,7 +356,7 @@
                       <div class="col-lg-3 col-md-4 col-sm-6 form-group">
                         <label>Patient Group</label>
                         <select
-                          class="form-control single-select"
+                          class="form-select"
                           data-placeholder="Select a Group"
                         >
                           <option value=""></option>
@@ -375,7 +375,7 @@
 
                       <div class="col-lg-3 col-md-4 col-sm-6 form-group">
                         <label>User Verify Order</label>
-                        <select class="form-control">
+                        <select class="form-select">
                           <option value=""></option>
                           <option value="1"></option>
                           <option value="2"></option>
@@ -383,7 +383,7 @@
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-6 form-group">
                         <label>Changing Authority</label>
-                        <select class="form-control">
+                        <select class="form-select">
                           <option value=""></option>
                           <option value="1"></option>
                           <option value="2"></option>
@@ -391,7 +391,7 @@
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-6 form-group">
                         <label>Charge To Discharged </label>
-                        <select class="form-control">
+                        <select class="form-select">
                           <option value=""></option>
                           <option value="1"></option>
                           <option value="2"></option>
@@ -399,7 +399,7 @@
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-6 form-group">
                         <label>Clearance Authority</label>
-                        <select class="form-control">
+                        <select class="form-select">
                           <option value=""></option>
                           <option value="D">Discharge Authority</option>
                           <option value="C">Clearance Authority</option>
@@ -408,7 +408,7 @@
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-6 form-group">
                         <label>Audit Level</label>
-                        <select class="form-control">
+                        <select class="form-select">
                           <option value=""></option>
                           <option value="1">Level 1</option>
                           <option value="2">Level 2</option>
@@ -428,13 +428,16 @@
                       </div>
                       <div class="col-lg-6 col-md-6 col-xs-6">
                         <div class="checkbox">
-                          <label><input type="checkbox" />Web Teller</label>
+                          <label><input 
+                            type="checkbox"  
+                            formControlName="ustllr"/>Web Teller</label>
                         </div>
                       </div>
                       <div class="col-lg-6 col-md-6 col-xs-6">
                         <div class="checkbox">
                           <label
-                            ><input type="checkbox" />Web Database Administrator
+                            ><input type="checkbox" 
+                            formControlName="usadmn" />Web Database Administrator
                           </label>
                         </div>
                       </div>
@@ -634,8 +637,9 @@
                       <div class="col-lg-3 col-md-4 col-sm-6 form-group">
                         <label>Nurse Station</label>
                         <select
-                          class="form-control single-select"
+                          class="form-select"
                           data-placeholder="Select a Nurse Station"
+                          formControlName="usnscd"
                         >
                           <option value=""></option>
                           <option value="1">Qualification 1</option>
@@ -653,8 +657,9 @@
                       <div class="col-lg-3 col-md-4 col-sm-6 form-group">
                         <label>Hospital</label>
                         <select
-                          class="form-control single-select"
+                          class="form-select"
                           data-placeholder="Select a Hospital"
+                          formControlName="hospitalCode"
                         >
                           <option value=""></option>
                           <option value="1">Qualification 1</option>
@@ -672,7 +677,7 @@
 
                       <div class="col-lg-3 col-md-4 col-sm-6 form-group">
                         <label>User Order Department</label>
-                        <select class="form-control chosen-multi">
+                        <select class="form-select" formControlName="usorderDep">
                           <option value=""></option>
                           <option value="1">Qualification 1</option>
                           <option value="2">Qualification 2</option>
@@ -688,7 +693,7 @@
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-6 form-group">
                         <label>Dept. Classification</label>
-                        <select class="form-control chosen-multi">
+                        <select class="form-select">
                           <option value=""></option>
                           <option value="1">Qualification 1</option>
                           <option value="2">Qualification 2</option>
@@ -704,7 +709,7 @@
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-6 form-group">
                         <label>Stock Type</label>
-                        <select class="form-control chosen-multi"
+                        <select class="form-select"
                         formControlName="usstck">
                           <option value=""></option>
                           <option value="BO">Both</option>
@@ -716,7 +721,7 @@
                       <div class="col-lg-3 col-md-4 col-sm-6 form-group">
                         <label>Users Job Type</label>
                         <select
-                          class="form-control single-select"
+                          class="form-select"
                           data-placeholder="Select a Job Type"
                         >
                           <option value=""></option>
@@ -740,7 +745,7 @@
                       <div class="col-lg-3 col-md-4 col-sm-6 form-group">
                         <label>User Discount Mapping </label>
                         <select
-                          class="form-control single-select"
+                          class="form-select"
                           data-placeholder="Select"
                         >
                           <option value=""></option>
@@ -812,7 +817,7 @@
                           </td>
                           <td>
                             <select
-                              class="form-control single-select"
+                              class="form-select"
                               data-placeholder="Select a Nurse Station"
                             >
                               <option value=""></option>
@@ -834,7 +839,7 @@
                           </td>
                           <td>
                             <select
-                              class="form-control single-select"
+                              class="form-select"
                               data-placeholder="Select a Nurse Station"
                             >
                               <option value=""></option>
@@ -1479,7 +1484,7 @@
                           <div class="ImgUploadBlock">
                             <img
                               id="ImgPreview"
-                              src="assets/images/default-user.png"
+                              src="{{userImage}}"
                               class="preview1"
                             />
                             <input
@@ -1497,6 +1502,7 @@
                                 id="imag"
                                 title=""
                                 class="input-img"
+                                (change)="getUserImage($event)"
                               />
                               Upload Image
                             </span>
@@ -1507,7 +1513,7 @@
                         <fieldset class="imgLoad">
                           <legend class="legend-upload">User Signature</legend>
                           <div class="ImgUploadBlock">
-                            <img id="ImgPreview2" src="" class="preview2" />
+                            <img id="ImgPreview2" src="{{signtureImage}}" class="preview2" />
                             <input
                               type="button"
                               id="removeImage2"
@@ -1515,7 +1521,8 @@
                               class="btn-rmv2"
                             />
                             <span class="btn_upload">
-                              <input type="file" id="imag2" title="" /> Upload
+                              <input type="file" id="imag2" title="" 
+                              (change)="getSignatureImage($event)"/> Upload
                               Signature
                             </span>
                           </div>

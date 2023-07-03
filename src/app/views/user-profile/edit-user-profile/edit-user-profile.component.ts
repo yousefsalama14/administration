@@ -14,6 +14,8 @@ declare var sayHello: any;
 export class EditUserProfileComponent implements OnInit {
   userProfileId = '0';
   userProfile: UserProfile;
+  userImage:any='';
+  signtureImage:any='';
   editUserProfileForm: FormGroup;
   constructor( private activatedRoute: ActivatedRoute,
               private userProfileService: UserProfileService,
@@ -365,5 +367,24 @@ return this.fb.group({
   uswdrwFlag: false,
   cancelPeriodFlag: false,
 });
+  }
+
+  getUserImage(event: any){
+    const file=event.target.files[0];
+    const reader=new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload =() =>{
+      this.userImage=reader.result
+    //  this.editUserProfileForm.get("userImage")?.setValue(this.userImage)
+    }
+  }
+  getSignatureImage(event: any){
+    const file=event.target.files[0];
+    const reader=new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload =() =>{
+      this.signtureImage=reader.result
+      //this.editUserProfileForm.get("signtureImage")?.setValue(this.signtureImage)
+    }
   }
 }

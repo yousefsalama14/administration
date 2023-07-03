@@ -8,7 +8,7 @@ import { UserProfile } from './../../core/model/UserProfile';
   providedIn: 'root'
 })
 export class UserProfileService {
- apiUrl:string='http://localhost:8080'
+ apiUrl:string='http://localhost:8085'
   constructor(private http:HttpClient) { }
 
 
