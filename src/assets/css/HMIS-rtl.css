@@ -1,0 +1,97 @@
+/******************************************************Action Menu*************************************/
+.action-menu ul li {
+    text-align: right;
+}
+
+/****************************************************** Table Details Details ************************************/
+
+tr.shown td:first-child, tr.shown + tr > td:first-child {
+    border-left: unset !important;
+    border-right: 1px solid #2172a9 !important;
+}
+tr.shown td:last-child, tr.shown + tr > td:last-child {
+    border-right: unset !important;
+    border-left: 1px solid #2172a9 !important;
+}
+
+/****************************************************** Order Actions ************************************/
+
+.actions-list::before {
+    left: unset;
+    right: 0;
+}
+
+/***************************************************** Multi-Valued Input Field ***********************************/
+
+.multi-valued .items .items-body ul{
+    padding-left: unset;
+    padding-right: 0;
+}
+
+.multi-valued .items .items-body ul li.item .delete {
+    float: left;
+}
+
+/****************************************************** DataTable Pagination ************************************/
+.dataTables_length {
+    left: unset;
+    right: 10px;
+}
+
+/****************************************************** Fieldset ************************************/
+
+legend.scheduler-border {
+    margin-left: unset;
+    margin-right: 10px;
+}
+
+/****************************************************** Vertical Tabs ************************************/
+
+.tabs-left {
+    border-right: unset;
+    border-left: 1px solid #ddd0;
+}
+
+.tabs-left > li {
+    margin-right: unset;
+    margin-left: -1px;
+}
+
+.tabs-right > li {
+    margin-left: unset;
+    margin-right: -1px;
+}
+
+.tabs-right > li.active > a,
+.tabs-right > li.active > a:hover,
+.tabs-right > li.active > a:focus {
+    border-left-color: unset;
+    border-rght-color: transparent;
+}
+
+.tabs-left > li > a {
+    margin-right: unset;
+    margin-left: 0;
+}
+
+.tabs-right > li > a {
+    margin-right: unset;
+    margin-left: 0;
+}
+
+/****************************************************** User/Doctor Profile Image ************************************/
+
+.lightbox-opened {
+    left: unset;
+    right: 0;
+}
+
+.lightbox-opened .closeZoom {
+    left: unset;
+    right: 26%;
+}
+
+.ZoomImg {
+    left: unset;
+    right: 47%;
+}

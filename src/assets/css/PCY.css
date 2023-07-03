@@ -1,0 +1,152 @@
+/******************************************************Nurse Filter Bar*************************************/
+.main-filter {
+    background: #1d3344;
+}
+.main-filter .btn {
+    height: 22px;
+    line-height: 10px;
+    min-width: 50px;
+}
+.main-filter label {
+    color: #fff;
+}
+.main-filter label.checkbox-inline {
+    /*margin-top: 15px;*/
+}
+
+.select2-dropdown.branch-selector-dropdown {
+    width: 230px !important;
+}
+
+/****************************************************** Patient Medical PopOver ************************************/
+.patient-info .dropdown-menu {
+    width: 400px;
+    padding: 0;
+    z-index: 3 !important;
+}
+
+.patient-info .bio .icon-list li::before {
+    content: "\f728";
+}
+.patient-info .diagnoses .icon-list li::before {
+    content: "\f470";
+}
+.patient-info .clinicals .icon-list li::before {
+    content: "\f572";
+}
+
+/****************************************************** WorkList ************************************/
+td.bg-warning {
+    background-color: #FFA500 !important;
+    /*color: #C67221;
+    background-color: #fdf7da;
+    cursor: default;
+    background-image: -webkit-repeating-linear-gradient(135deg, transparent, transparent 4px, rgba(252, 223, 195, 0.5) 4px, rgba(253, 231, 209, 0.5) 8px);
+    background-image: repeating-linear-gradient(-45deg, transparent, transparent 4px, rgba(252, 223, 195, 0.5) 4px, rgba(253, 231, 209, 0.5) 8px);*/
+}
+td.bg-danger {
+    background-color: #f97171 !important;
+    /*color: #ef2135;
+    background-color: #fffefd;
+    cursor: default;
+    background-image: -webkit-repeating-linear-gradient(135deg, transparent, transparent 4px, rgba(251, 201, 206, 0.5) 4px, rgba(252, 211, 215, 0.5) 8px);
+    background-image: repeating-linear-gradient(-45deg, transparent, transparent 4px, rgba(251, 201, 206, 0.5) 4px, rgba(252, 211, 215, 0.5) 8px);*/
+}
+td.bg-danger * {
+    color: inherit;
+}
+
+td.bg-success {
+    color: #00bc1d;
+    background-color: #ebffe9;
+    cursor: default;
+    background-image: -webkit-repeating-linear-gradient(135deg, transparent, transparent 4px, rgba(184, 237, 192, 0.5) 4px, rgba(204, 242, 210, 0.5) 8px);
+    background-image: repeating-linear-gradient(-45deg, transparent, transparent 4px, rgba(184, 237, 192, 0.5) 4px, rgba(204, 242, 210, 0.5) 8px);
+}
+
+/****************************************************** Order Details ************************************/
+
+.workListDetails {
+    border-radius: 0;
+}
+.workListDetails .tab-content {
+    padding-top: 0;
+    background: #fff;
+}
+.panel{
+    background: transparent;
+}
+.workListDetails table.dataTable {
+    margin-top: 0px !important;
+}
+
+.workListDetails .nav-tabs > li > a{
+     background: #0070ae;
+     color: #fff;
+ }
+.workListDetails .nav-tabs > li > a:hover, .workListDetails .nav-tabs > li.active > a, .workListDetails .nav-tabs > li.active > a:focus, .workListDetails .nav-tabs > li.active > a:hover{
+    background: #ffc356;
+    color: #896464;
+    border-bottom: 3px solid #ffc356;
+    padding: 6px 10px 4px;
+}
+
+
+
+/****************************************************** Dispense Page ************************************/
+
+.chosen-patient{
+    background: #9ec1e0;
+    padding: 10px;
+    border-radius: 5px;
+}
+.chosen-patient ul {}
+.chosen-patient ul li{
+    min-height: 20px;
+    line-height: 20px;
+    background: #ebebeb;
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid #a7d7ff;
+    border-radius: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.chosen-patient ul li:nth-child(1){
+    width: 80px;
+    float: left;
+}
+.chosen-patient ul li:nth-child(1) img{
+    width: 100%;
+}
+.chosen-patient ul li:nth-child(2),.chosen-patient ul li:nth-child(3) {
+    display: block;
+    width: calc(100% - 100px);
+    float: right;
+}
+.chosen-patient ul li:nth-child(4) {
+    clear: both;
+}
+
+/****************************************************** Item Details Dropdown ************************************/
+.more-medical .dropdown-menu {
+    width: 300px;
+    padding: 0;
+}
+
+/****************************************************** Drug Fast Info Dropdown ************************************/
+.drug-fast-info .dropdown-menu {
+    padding: 0;
+}
+
+/****************************************************** Helpers ************************************/
+.checkbox input[type=checkbox], .checkbox-inline input[type=checkbox], .radio input[type=radio], .radio-inline input[type=radio] {
+    margin: 0 -17px 0 -17px;
+}
+
+
+/****************************************************** OrderDetails ************************************/
+#OrderDetails .term , #OrderDetails .description{
+    line-height: 22px;
+}
