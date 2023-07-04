@@ -1,800 +1,652 @@
 <form [formGroup]="editUserProfileForm" (ngSubmit)="saveUpdate()">
-  <div class="main-content row">
-    <div class="page-title col-sm-12">
+  <div class="main-content">
+    <div class="page-title">
       <h1>
-        <a href="HMIS-UserIndex.html" class="mr-5"
-          ><span class="left glyphicon glyphicon-chevron-left"></span
-        ></a>
+        <a href="#" class="me-2"><span class="fas fa-chevron-left"></span></a>
         Edit User Profile
-        <div class="tools right mb-5">
-          <button
-            class="btn btn-primary mr-3"
-            type="submit"
-            style="width: 80px"
-            [title]="
+        <div class="tools float-end mb-2">
+          <button class="btn btn-primary mr-3" type="submit" style="width: 80px" [title]="
               editUserProfileForm.valid
                 ? 'Save your entered data'
                 : 'Disabled until the form data is valid'
-            "
-            [disabled]="!editUserProfileForm.valid"
-          >
+            " [disabled]="!editUserProfileForm.valid">
             Save
           </button>
-          <a href="#" data-toggle="modal" data-target="#errorMsg"
-            ><span class="glyphicon glyphicon-floppy-disk"></span
-          ></a>
+          <a href="#"><span class="fas fa-save"></span></a>
         </div>
       </h1>
-      <div class="clearfix"></div>
     </div>
     <!-- end page-title -->
     <div class="real-content">
-      <!---->
-
-      <div class="col-md-12">
-        <div class="light-blue row p-5 fast-info">
-          <div class="col-lg-2 col-md-2 col-sm-4 form-group">
-            <label>Department Code </label>
-            <input
-              type="text"
-              class="form-control"
-              value=""
-              disabled="disabled"
-              [value]="userProfile.departmentCode"
-            />
+      <div class="row">
+        <div class="col-md-12">
+          <div class="light-blue row p-5 fast-info">
+            <div class="col-lg-2 col-md-2 col-sm-4 form-group">
+              <label>Department Code </label>
+              <input type="text" class="form-control" value="" disabled="disabled"
+                [value]="userProfile.departmentCode" />
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 form-group">
+              <label>User Name (Latin) </label>
+              <input type="text" class="form-control" value="" disabled="disabled" [value]="userProfile.enName" />
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 form-group">
+              <label>User Name (Arabic)</label>
+              <input type="text" class="form-control" value="" disabled="disabled" [value]="userProfile.enName" />
+            </div>
           </div>
-          <div class="col-lg-3 col-md-4 col-sm-6 form-group">
-            <label>User Name (Latin) </label>
-            <input
-              type="text"
-              class="form-control"
-              value=""
-              disabled="disabled"
-              [value]="userProfile.enName"
-            />
-          </div>
-          <div class="col-lg-3 col-md-4 col-sm-6 form-group">
-            <label>User Name (Arabic)</label>
-            <input
-              type="text"
-              class="form-control"
-              value=""
-              disabled="disabled"
-              [value]="userProfile.enName"
-            />
-          </div>
-        </div>
-        <div>
-          <div
-            class="col-xs-3 col-md-3 col-lg-2 no-padding-left no-padding-right"
-          >
-            <ul class="nav nav-tabs tabs-left">
-              <li class="active">
-                <a href="#userData1" data-toggle="tab">User Data </a>
-              </li>
-              <li><a href="#userNC" data-toggle="tab">User N/C</a></li>
-              <li><a href="#userFC" data-toggle="tab">User F/C</a></li>
-              <li><a href="#groupMails" data-toggle="tab">Group Mails </a></li>
-              <li><a href="#userServices" data-toggle="tab">Services </a></li>
-              <li>
-                <a href="#hosiptal" data-toggle="tab"
-                  >Hospital Authentication
-                </a>
-              </li>
-              <li>
-                <a href="#userimgSignature" data-toggle="tab"
-                  >Image and Signature
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div
-            class="col-xs-9 col-md-9 col-lg-10 no-padding-left no-padding-right"
-          >
-            <div class="tab-content verticalTabs">
-              <div class="tab-pane active" id="userData1">
-                <div class="row">
-                  <!--  Personal Data  -->
-                  <fieldset class="scheduler-border">
-                    <legend class="scheduler-border">Basic Info</legend>
-                    <div class="row">
-                      <div class="col-lg-4 col-md-4 col-sm-3 form-group">
-                        <label>Department</label>
-                        <select
-                          class="form-select"
-                          data-placeholder="Select a Department"
-                          formControlName="usdptp"
-                        >
-                          <option value="O">Others</option>
-                          <option value="N">Nursing</option>
-                          <option value="F">Financial</option>
-                          <option value="M">Medical Rec</option>
-                          <option value="L">Dental Med. Rec.</option>
-                          <option value="T">Dietary</option>
-                          <option value="A">Administration</option>
-                          <option value="R">Registration Office</option>
-                          <option value="I">I/P Admission</option>
-                          <option value="S">O/P Admission</option>
-                          <option value="E">Emergency Admission</option>
-                          <option value="D">Doctor</option>
-                          <option value="C">Cashier</option>
-                          <option value="P">Pharmacy</option>
-                        </select>
-                      </div>
-                      <div class="col-lg-4 col-md-4 col-sm-9 form-group">
-                        <label>User Name (Latin) </label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          formControlName="enName"
-                        />
-                      </div>
-                      <div class="clear visible-sm"></div>
-                      <div class="col-lg-4 col-md-4 col-sm-6 form-group">
-                        <label>User Name (Arabic)</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          formControlName="arName"
-                        />
-                      </div>
-                      <div class="clear visible-sm"></div>
-                      <div class="col-lg-4 col-md-4 col-sm-6 form-group">
-                        <label>User Number</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          formControlName="usepno"
-                          [ngClass]="{
+          <div>
+            <div class="col-xs-3 col-md-3 col-lg-2 no-padding-left no-padding-right">
+              <ul class="nav nav-tabs tabs-left">
+                <li class="active">
+                  <a href="#userData1" data-bs-toggle="tab">User Data </a>
+                </li>
+                <li><a href="#userNC" data-bs-toggle="tab">User N/C</a></li>
+                <li><a href="#userFC" data-bs-toggle="tab">User F/C</a></li>
+                <li><a href="#groupMails" data-bs-toggle="tab">Group Mails </a></li>
+                <li><a href="#userServices" data-bs-toggle="tab">Services </a></li>
+                <li>
+                  <a href="#hosiptal" data-bs-toggle="tab">Hospital Authentication
+                  </a>
+                </li>
+                <li>
+                  <a href="#userimgSignature" data-bs-toggle="tab">Image and Signature
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-xs-9 col-md-9 col-lg-10 no-padding-left no-padding-right">
+              <div class="tab-content verticalTabs">
+                <div class="tab-pane active" id="userData1">
+                  <div class="row">
+                    <!--  Personal Data  -->
+                    <fieldset class="scheduler-border">
+                      <legend class="scheduler-border">Basic Info</legend>
+                      <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-3 form-group">
+                          <label>Department</label>
+                          <select class="form-select" data-placeholder="Select a Department" formControlName="usdptp">
+                            <option value="O">Others</option>
+                            <option value="N">Nursing</option>
+                            <option value="F">Financial</option>
+                            <option value="M">Medical Rec</option>
+                            <option value="L">Dental Med. Rec.</option>
+                            <option value="T">Dietary</option>
+                            <option value="A">Administration</option>
+                            <option value="R">Registration Office</option>
+                            <option value="I">I/P Admission</option>
+                            <option value="S">O/P Admission</option>
+                            <option value="E">Emergency Admission</option>
+                            <option value="D">Doctor</option>
+                            <option value="C">Cashier</option>
+                            <option value="P">Pharmacy</option>
+                          </select>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-9 form-group">
+                          <label>User Name (Latin) </label>
+                          <input type="text" class="form-control" formControlName="enName" />
+                        </div>
+                        <div class="clear visible-sm"></div>
+                        <div class="col-lg-4 col-md-4 col-sm-6 form-group">
+                          <label>User Name (Arabic)</label>
+                          <input type="text" class="form-control" formControlName="arName" />
+                        </div>
+                        <div class="clear visible-sm"></div>
+                        <div class="col-lg-4 col-md-4 col-sm-6 form-group">
+                          <label>User Number</label>
+                          <input type="text" class="form-control" formControlName="usepno" [ngClass]="{
                             'is-invalid':
                               (editUserProfileForm.get('usepno')?.touched ||
                               editUserProfileForm.get('usepno')?.dirty) &&
                               !editUserProfileForm.get('usepno')?.valid
-                          }"
-                        />
-                        <span class="invalid-feedback">
-                          <span *ngIf="editUserProfileForm.get('usepno')?.errors?.['required']">
-                            User Number is Required.
-                          </span>
-                          <!-- <span
+                          }" />
+                          <span class="invalid-feedback">
+                            <span *ngIf="editUserProfileForm.get('usepno')?.errors?.['required']">
+                              User Number is Required.
+                            </span>
+                            <!-- <span
                                 *ngIf="employeeForm.get('employeeId')?.errors?.['min']"
                               >
                                 The Employee Id must be longer than 3 characters.
                               </span> -->
-                          <!-- <span
+                            <!-- <span
                               *ngIf="employeeForm.get('employeeId')?.errors?.['max']"
                             >
                               The Employee Id must be Max 5 characters.
                             </span> -->
-                        </span>
-                      </div>
-                      <div class="clear visible-sm"></div>
-                      <div class="visible-lg visible-md visible-sm"></div>
+                          </span>
+                        </div>
+                        <div class="clear visible-sm"></div>
+                        <div class="visible-lg visible-md visible-sm"></div>
 
-                      <div class="clear visible-sm"></div>
-                      <div class="col-lg-4 col-md-4 col-sm-6 form-group">
-                        <label>Birth Date</label>
-                        <input
-                          type="date"
-                          class="form-control"
-                          formControlName="usdob"
-                          [ngClass]="{
+                        <div class="clear visible-sm"></div>
+                        <div class="col-lg-4 col-md-4 col-sm-6 form-group">
+                          <label>Birth Date</label>
+                          <input type="date" class="form-control" formControlName="usdob" [ngClass]="{
                             'is-invalid':
                               (editUserProfileForm.get('usdob')?.touched ||
                               editUserProfileForm.get('usdob')?.dirty) &&
                               !editUserProfileForm.get('usdob')?.valid
-                          }"
-                        />
-                        <span class="invalid-feedback">
-                          <span *ngIf="editUserProfileForm.get('usdob')?.errors?.['required']">
-                            Birth Date is Required.
-                          </span>
-                          <!-- <span
+                          }" />
+                          <span class="invalid-feedback">
+                            <span *ngIf="editUserProfileForm.get('usdob')?.errors?.['required']">
+                              Birth Date is Required.
+                            </span>
+                            <!-- <span
                                 *ngIf="employeeForm.get('employeeId')?.errors?.['min']"
                               >
                                 The Employee Id must be longer than 3 characters.
                               </span> -->
-                          <!-- <span
+                            <!-- <span
                               *ngIf="employeeForm.get('employeeId')?.errors?.['max']"
                             >
                               The Employee Id must be Max 5 characters.
                             </span> -->
-                        </span>
-                      </div>
-                      <div class="clear visible-sm"></div>
-                      <div class="col-lg-4 col-md-4 col-sm-6 form-group   " >
-                        <label>Telephone</label>
-                        <input type="telephone" class="form-control"  formControlName="useptl" />
-                      </div>
-                      <div class="col-lg-3 col-md-4 col-sm-6 form-group ">
-                        <label>Email</label>
-                        <input
-                          class="form-control"
-                          type="text"
-                          formControlName="email"
-                          [ngClass]="{
+                          </span>
+                        </div>
+                        <div class="clear visible-sm"></div>
+                        <div class="col-lg-4 col-md-4 col-sm-6 form-group   ">
+                          <label>Telephone</label>
+                          <input type="telephone" class="form-control" formControlName="useptl" />
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 form-group ">
+                          <label>Email</label>
+                          <input class="form-control" type="text" formControlName="email" [ngClass]="{
                             'is-invalid':
                               (editUserProfileForm.get('email')?.touched ||
                               editUserProfileForm.get('email')?.dirty) &&
                               !editUserProfileForm.get('email')?.valid
-                          }"
-
-
-                        />
-                        <span class="invalid-feedback">
-                          <span *ngIf="editUserProfileForm.get('email')?.errors?.['required']">
-                            Please enter your Email.
-                          </span>
-                           <span
-                                *ngIf="editUserProfileForm.get('email')?.errors?.['email']" >
-                                Please enter a valid email address.
-                              </span>
-                          <!-- <span
+                          }" />
+                          <span class="invalid-feedback">
+                            <span *ngIf="editUserProfileForm.get('email')?.errors?.['required']">
+                              Please enter your Email.
+                            </span>
+                            <span *ngIf="editUserProfileForm.get('email')?.errors?.['email']">
+                              Please enter a valid email address.
+                            </span>
+                            <!-- <span
                               *ngIf="employeeForm.get('employeeId')?.errors?.['max']"
                             >
                               The Employee Id must be Max 5 characters.
                             </span> -->
-                        </span>
-                    </div>
-                      <div class="col-lg-3 col-md-4 col-sm-6 form-group">
-                        <label>Initial Language</label>
-                        <select
-                          class="form-select"
-                          data-placeholder="Select a Language"
-                          formControlName="ususlg"
-                        >
-                          <option value=""></option>
-                          <option value="A">Arabic</option>
-                          <option value="L">English</option>
-                        </select>
+                          </span>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 form-group">
+                          <label>Initial Language</label>
+                          <select class="form-select" data-placeholder="Select a Language" formControlName="ususlg">
+                            <option value=""></option>
+                            <option value="A">Arabic</option>
+                            <option value="L">English</option>
+                          </select>
+                        </div>
                       </div>
-                    </div>
-                  </fieldset>
+                    </fieldset>
 
-                  <fieldset class="scheduler-border">
-                    <legend class="scheduler-border">
-                      Security & Authorities
-                    </legend>
+                    <fieldset class="scheduler-border">
+                      <legend class="scheduler-border">
+                        Security & Authorities
+                      </legend>
 
-                    <div class="row">
-                      <div class="col-lg-3 col-md-4 col-sm-6 form-group">
-                        <label>Password (New)</label>
-                        <input type="password" class="form-control" formControlName="ususpw" />
-                      </div>
+                      <div class="row">
+                        <div class="col-lg-3 col-md-4 col-sm-6 form-group">
+                          <label>Password (New)</label>
+                          <input type="password" class="form-control" formControlName="ususpw" />
+                        </div>
 
-                      <div class="col-lg-3 col-md-4 col-sm-6 form-group">
-                        <label>Password Expiration</label>
-                        <select
-                          class="form-select"
-                          data-placeholder="Select a Expiration"
-                        >
-                          <option value=""></option>
-                          <option value="1">Status 1</option>
-                          <option value="2">Status 2</option>
-                          <option value="2">Status 3</option>
-                          <option value="2">Status 4</option>
-                          <option value="2">Status 5</option>
-                          <option value="1">Status 6</option>
-                          <option value="2">Status 7</option>
-                          <option value="2">Status 8</option>
-                          <option value="2">Status 9</option>
-                          <option value="2">Status 10</option>
-                        </select>
-                      </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 form-group">
+                          <label>Password Expiration</label>
+                          <select class="form-select" data-placeholder="Select a Expiration">
+                            <option value=""></option>
+                            <option value="1">Status 1</option>
+                            <option value="2">Status 2</option>
+                            <option value="2">Status 3</option>
+                            <option value="2">Status 4</option>
+                            <option value="2">Status 5</option>
+                            <option value="1">Status 6</option>
+                            <option value="2">Status 7</option>
+                            <option value="2">Status 8</option>
+                            <option value="2">Status 9</option>
+                            <option value="2">Status 10</option>
+                          </select>
+                        </div>
 
-                      <div class="col-lg-3 col-md-4 col-sm-6 form-group">
-                        <label>Security Level</label>
-                        <select class="form-select" formControlName="ussncd">
-                          <option value=""></option>
-                          <option value="0">0</option>
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
-                          <option value="6">6</option>
-                          <option value="7">7</option>
-                          <option value="8">8</option>
-                          <option value="9">9</option>
-                        </select>
-                      </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 form-group">
+                          <label>Security Level</label>
+                          <select class="form-select" formControlName="ussncd">
+                            <option value=""></option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                          </select>
+                        </div>
 
-                      <div class="col-lg-3 col-md-4 col-sm-6 form-group">
-                        <label>Authority To Update</label>
-                        <select class="form-select"
-                        formControlName="usupfc">
-                          <option value=""></option>
+                        <div class="col-lg-3 col-md-4 col-sm-6 form-group">
+                          <label>Authority To Update</label>
+                          <select class="form-select" formControlName="usupfc">
+                            <option value=""></option>
                             <option value="B">Both</option>
-                          <option value="I">Inpatient</option>
-                          <option value="O">Outpatient</option>
-                        </select>
-                      </div>
-                      <div class="col-lg-3 col-md-4 col-sm-6 form-group">
-                        <label>Approval Authority</label>
-                        <select class="form-select"
-                        formControlName="usaptp">
-                          <option value=""></option>
-                          <option value="B">Both</option>
-                          <option value="D">Doctor Approval </option>
-                          <option value="C">Company Approval</option>
-                        </select>
-                      </div>
+                            <option value="I">Inpatient</option>
+                            <option value="O">Outpatient</option>
+                          </select>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 form-group">
+                          <label>Approval Authority</label>
+                          <select class="form-select" formControlName="usaptp">
+                            <option value=""></option>
+                            <option value="B">Both</option>
+                            <option value="D">Doctor Approval </option>
+                            <option value="C">Company Approval</option>
+                          </select>
+                        </div>
 
-                      <div class="col-lg-3 col-md-4 col-sm-6 form-group">
-                        <label>Authority To Cancel </label>
-                        <select
-                          class="form-select"
-                          data-placeholder="Select"
-                        >
-                          <option value=""></option>
-                          <option value="1">Qualification 1</option>
-                          <option value="2">Qualification 2</option>
-                          <option value="2">Qualification 3</option>
-                          <option value="2">Qualification 4</option>
-                          <option value="2">Qualification 5</option>
-                          <option value="1">Qualification 6</option>
-                          <option value="2">Qualification 7</option>
-                          <option value="2">Qualification 8</option>
-                          <option value="2">Qualification 9</option>
-                          <option value="2">Qualification 10</option>
-                        </select>
-                      </div>
-                      <div class="col-lg-3 col-md-4 col-sm-6 form-group">
-                        <label>Cancellation Hours No.</label>
-                        <input class="form-control" type="text" />
-                      </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 form-group">
+                          <label>Authority To Cancel </label>
+                          <select class="form-select" data-placeholder="Select">
+                            <option value=""></option>
+                            <option value="1">Qualification 1</option>
+                            <option value="2">Qualification 2</option>
+                            <option value="2">Qualification 3</option>
+                            <option value="2">Qualification 4</option>
+                            <option value="2">Qualification 5</option>
+                            <option value="1">Qualification 6</option>
+                            <option value="2">Qualification 7</option>
+                            <option value="2">Qualification 8</option>
+                            <option value="2">Qualification 9</option>
+                            <option value="2">Qualification 10</option>
+                          </select>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 form-group">
+                          <label>Cancellation Hours No.</label>
+                          <input class="form-control" type="text" />
+                        </div>
 
-                      <div class="col-lg-3 col-md-4 col-sm-6 form-group">
-                        <label>Use MRM</label>
-                        <select class="form-select"
-                        formControlName="userMrmCode">
-                          <option value="W">Web</option>
-                          <option value="D">Desktop</option>
-                        </select>
-                      </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 form-group">
+                          <label>Use MRM</label>
+                          <select class="form-select" formControlName="userMrmCode">
+                            <option value="W">Web</option>
+                            <option value="D">Desktop</option>
+                          </select>
+                        </div>
 
-                      <div class="col-lg-3 col-md-4 col-sm-6 form-group">
-                        <label>Patient Group</label>
-                        <select
-                          class="form-select"
-                          data-placeholder="Select a Group"
-                        >
-                          <option value=""></option>
-                          <option value="1">Status 1</option>
-                          <option value="2">Status 2</option>
-                          <option value="2">Status 3</option>
-                          <option value="2">Status 4</option>
-                          <option value="2">Status 5</option>
-                          <option value="1">Status 6</option>
-                          <option value="2">Status 7</option>
-                          <option value="2">Status 8</option>
-                          <option value="2">Status 9</option>
-                          <option value="2">Status 10</option>
-                        </select>
-                      </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 form-group">
+                          <label>Patient Group</label>
+                          <select class="form-select" data-placeholder="Select a Group">
+                            <option value=""></option>
+                            <option value="1">Status 1</option>
+                            <option value="2">Status 2</option>
+                            <option value="2">Status 3</option>
+                            <option value="2">Status 4</option>
+                            <option value="2">Status 5</option>
+                            <option value="1">Status 6</option>
+                            <option value="2">Status 7</option>
+                            <option value="2">Status 8</option>
+                            <option value="2">Status 9</option>
+                            <option value="2">Status 10</option>
+                          </select>
+                        </div>
 
-                      <div class="col-lg-3 col-md-4 col-sm-6 form-group">
-                        <label>User Verify Order</label>
-                        <select class="form-select">
-                          <option value=""></option>
-                          <option value="1"></option>
-                          <option value="2"></option>
-                        </select>
-                      </div>
-                      <div class="col-lg-3 col-md-4 col-sm-6 form-group">
-                        <label>Changing Authority</label>
-                        <select class="form-select">
-                          <option value=""></option>
-                          <option value="1"></option>
-                          <option value="2"></option>
-                        </select>
-                      </div>
-                      <div class="col-lg-3 col-md-4 col-sm-6 form-group">
-                        <label>Charge To Discharged </label>
-                        <select class="form-select">
-                          <option value=""></option>
-                          <option value="1"></option>
-                          <option value="2"></option>
-                        </select>
-                      </div>
-                      <div class="col-lg-3 col-md-4 col-sm-6 form-group">
-                        <label>Clearance Authority</label>
-                        <select class="form-select">
-                          <option value=""></option>
-                          <option value="D">Discharge Authority</option>
-                          <option value="C">Clearance Authority</option>
+                        <div class="col-lg-3 col-md-4 col-sm-6 form-group">
+                          <label>User Verify Order</label>
+                          <select class="form-select">
+                            <option value=""></option>
+                            <option value="1"></option>
+                            <option value="2"></option>
+                          </select>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 form-group">
+                          <label>Changing Authority</label>
+                          <select class="form-select">
+                            <option value=""></option>
+                            <option value="1"></option>
+                            <option value="2"></option>
+                          </select>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 form-group">
+                          <label>Charge To Discharged </label>
+                          <select class="form-select">
+                            <option value=""></option>
+                            <option value="1"></option>
+                            <option value="2"></option>
+                          </select>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 form-group">
+                          <label>Clearance Authority</label>
+                          <select class="form-select">
+                            <option value=""></option>
+                            <option value="D">Discharge Authority</option>
+                            <option value="C">Clearance Authority</option>
 
-                        </select>
-                      </div>
-                      <div class="col-lg-3 col-md-4 col-sm-6 form-group">
-                        <label>Audit Level</label>
-                        <select class="form-select">
-                          <option value=""></option>
-                          <option value="1">Level 1</option>
-                          <option value="2">Level 2</option>
-                          <option value="3">Level 3</option>
-                          <option value="A">ALL</option>
-                        </select>
-                      </div>
-                    </div>
-
-                    <div class="row">
-                      <div class="col-lg-6 col-md-6 col-xs-6">
-                        <div class="checkbox">
-                          <label
-                            ><input type="checkbox" />Web Administrator</label
-                          >
+                          </select>
                         </div>
-                      </div>
-                      <div class="col-lg-6 col-md-6 col-xs-6">
-                        <div class="checkbox">
-                          <label><input 
-                            type="checkbox"  
-                            formControlName="ustllr"/>Web Teller</label>
-                        </div>
-                      </div>
-                      <div class="col-lg-6 col-md-6 col-xs-6">
-                        <div class="checkbox">
-                          <label
-                            ><input type="checkbox" 
-                            formControlName="usadmn" />Web Database Administrator
-                          </label>
-                        </div>
-                      </div>
-                      <div class="col-lg-6 col-md-6 col-xs-6">
-                        <div class="checkbox">
-                          <label
-                            ><input type="checkbox" />Web Database Web Black
-                            List Patient
-                          </label>
-                        </div>
-                      </div>
-                      <div class="col-lg-6 col-md-6 col-xs-6">
-                        <div class="checkbox">
-                          <label
-                            ><input type="checkbox" />User Can Verify Pharmacy
-                            Order</label
-                          >
-                        </div>
-                      </div>
-                      <div class="col-lg-6 col-md-6 col-xs-6">
-                        <div class="checkbox">
-                          <label
-                            ><input type="checkbox" />Force Package Contain
-                            Items</label
-                          >
-                        </div>
-                      </div>
-                      <div class="col-lg-6 col-md-6 col-xs-6">
-                        <div class="checkbox">
-                          <label
-                            ><input type="checkbox" />Change Charge Date
-                            Authority</label
-                          >
-                        </div>
-                      </div>
-                      <div class="col-lg-6 col-md-6 col-xs-6">
-                        <div class="checkbox">
-                          <label
-                            ><input type="checkbox" />Show Order Level</label
-                          >
-                        </div>
-                      </div>
-                      <div class="col-lg-6 col-md-6 col-xs-6">
-                        <div class="checkbox">
-                          <label
-                            ><input type="checkbox" />Allow Changing Charge
-                            N/S</label
-                          >
-                        </div>
-                      </div>
-                      <div class="col-lg-6 col-md-6 col-xs-6">
-                        <div class="checkbox">
-                          <label
-                            ><input type="checkbox" />User deal with Future
-                            Setup</label
-                          >
-                        </div>
-                      </div>
-                      <div class="col-lg-6 col-md-6 col-xs-6">
-                        <div class="checkbox">
-                          <label
-                            ><input type="checkbox" />Allow VIP
-                            Pre-admission</label
-                          >
-                        </div>
-                      </div>
-                      <div class="col-lg-6 col-md-6 col-xs-6">
-                        <div class="checkbox">
-                          <label
-                            ><input type="checkbox" />return Drug in closed
-                            Acc.</label
-                          >
-                        </div>
-                      </div>
-                      <div class="col-lg-6 col-md-6 col-xs-6">
-                        <div class="checkbox">
-                          <label
-                            ><input type="checkbox" />Booking Of Blocked
-                            Patient</label
-                          >
-                        </div>
-                      </div>
-                      <div class="col-lg-6 col-md-6 col-xs-6">
-                        <div class="checkbox">
-                          <label
-                            ><input type="checkbox" />Clear Blocking due to no
-                            show</label
-                          >
-                        </div>
-                      </div>
-                      <div class="col-lg-6 col-md-6 col-xs-6">
-                        <div class="checkbox">
-                          <label
-                            ><input type="checkbox" />Change Admission
-                            Date</label
-                          >
-                        </div>
-                      </div>
-                      <div class="col-lg-6 col-md-6 col-xs-6">
-                        <div class="checkbox">
-                          <label
-                            ><input type="checkbox" />User Can Generate Final
-                            Bill</label
-                          >
-                        </div>
-                      </div>
-                      <div class="col-lg-6 col-md-6 col-xs-6">
-                        <div class="checkbox">
-                          <label
-                            ><input type="checkbox" />User Can delete from
-                            Regenerate</label
-                          >
-                        </div>
-                      </div>
-                      <div class="col-lg-6 col-md-6 col-xs-6">
-                        <div class="checkbox">
-                          <label
-                            ><input type="checkbox" />Update Financial Category
-                            Final Bill
-                          </label>
-                        </div>
-                      </div>
-                      <div class="col-lg-6 col-md-6 col-xs-6">
-                        <div class="checkbox">
-                          <label
-                            ><input type="checkbox" />Disable Continue
-                            Processing</label
-                          >
-                        </div>
-                      </div>
-                      <div class="col-lg-6 col-md-6 col-xs-6">
-                        <div class="checkbox">
-                          <label
-                            ><input type="checkbox" />Update Financial Category
-                            through certain period</label
-                          >
-                        </div>
-                      </div>
-                      <div class="col-lg-6 col-md-6 col-xs-6">
-                        <div class="checkbox">
-                          <label
-                            ><input type="checkbox" />Allow Update Price /
-                            Cost</label
-                          >
-                        </div>
-                      </div>
-                      <div class="col-lg-6 col-md-6 col-xs-6">
-                        <div class="checkbox">
-                          <label
-                            ><input type="checkbox" />Withdraw Authority</label
-                          >
-                        </div>
-                      </div>
-                      <div class="col-lg-6 col-md-6 col-xs-6">
-                        <div class="checkbox">
-                          <label
-                            ><input type="checkbox" />Deposit Authority</label
-                          >
-                        </div>
-                      </div>
-                      <div class="col-lg-6 col-md-6 col-xs-6">
-                        <div class="checkbox">
-                          <label
-                            ><input type="checkbox" />Allow User to Update all
-                            batches Price
-                          </label>
-                        </div>
-                      </div>
-                      <div class="col-lg-6 col-md-6 col-xs-6">
-                        <div class="checkbox">
-                          <label
-                            ><input type="checkbox" />Supervisor Auditing</label
-                          >
-                        </div>
-                      </div>
-                      <div class="col-lg-6 col-md-6 col-xs-6">
-                        <div class="checkbox">
-                          <label
-                            ><input type="checkbox" />Re-print receipt For
-                            Appointment</label
-                          >
-                        </div>
-                      </div>
-                      <div class="col-lg-6 col-md-6 col-xs-6">
-                        <div class="checkbox">
-                          <label
-                            ><input type="checkbox" />Enable fix hashing problem
-                            in single app</label
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </fieldset>
-                  <fieldset class="scheduler-border">
-                    <legend class="scheduler-border">Work & Dep.</legend>
-                    <div class="row">
-                      <div class="col-lg-3 col-md-4 col-sm-6 form-group">
-                        <label>Nurse Station</label>
-                        <select
-                          class="form-select"
-                          data-placeholder="Select a Nurse Station"
-                          formControlName="usnscd"
-                        >
-                          <option value=""></option>
-                          <option value="1">Qualification 1</option>
-                          <option value="2">Qualification 2</option>
-                          <option value="2">Qualification 3</option>
-                          <option value="2">Qualification 4</option>
-                          <option value="2">Qualification 5</option>
-                          <option value="1">Qualification 6</option>
-                          <option value="2">Qualification 7</option>
-                          <option value="2">Qualification 8</option>
-                          <option value="2">Qualification 9</option>
-                          <option value="2">Qualification 10</option>
-                        </select>
-                      </div>
-                      <div class="col-lg-3 col-md-4 col-sm-6 form-group">
-                        <label>Hospital</label>
-                        <select
-                          class="form-select"
-                          data-placeholder="Select a Hospital"
-                          formControlName="hospitalCode"
-                        >
-                          <option value=""></option>
-                          <option value="1">Qualification 1</option>
-                          <option value="2">Qualification 2</option>
-                          <option value="2">Qualification 3</option>
-                          <option value="2">Qualification 4</option>
-                          <option value="2">Qualification 5</option>
-                          <option value="1">Qualification 6</option>
-                          <option value="2">Qualification 7</option>
-                          <option value="2">Qualification 8</option>
-                          <option value="2">Qualification 9</option>
-                          <option value="2">Qualification 10</option>
-                        </select>
-                      </div>
-
-                      <div class="col-lg-3 col-md-4 col-sm-6 form-group">
-                        <label>User Order Department</label>
-                        <select class="form-select" formControlName="usorderDep">
-                          <option value=""></option>
-                          <option value="1">Qualification 1</option>
-                          <option value="2">Qualification 2</option>
-                          <option value="2">Qualification 3</option>
-                          <option value="2">Qualification 4</option>
-                          <option value="2">Qualification 5</option>
-                          <option value="1">Qualification 6</option>
-                          <option value="2">Qualification 7</option>
-                          <option value="2">Qualification 8</option>
-                          <option value="2">Qualification 9</option>
-                          <option value="2">Qualification 10</option>
-                        </select>
-                      </div>
-                      <div class="col-lg-3 col-md-4 col-sm-6 form-group">
-                        <label>Dept. Classification</label>
-                        <select class="form-select">
-                          <option value=""></option>
-                          <option value="1">Qualification 1</option>
-                          <option value="2">Qualification 2</option>
-                          <option value="2">Qualification 3</option>
-                          <option value="2">Qualification 4</option>
-                          <option value="2">Qualification 5</option>
-                          <option value="1">Qualification 6</option>
-                          <option value="2">Qualification 7</option>
-                          <option value="2">Qualification 8</option>
-                          <option value="2">Qualification 9</option>
-                          <option value="2">Qualification 10</option>
-                        </select>
-                      </div>
-                      <div class="col-lg-3 col-md-4 col-sm-6 form-group">
-                        <label>Stock Type</label>
-                        <select class="form-select"
-                        formControlName="usstck">
-                          <option value=""></option>
-                          <option value="BO">Both</option>
-                          <option value="DR">Drug</option>
-                          <option value="SU">Supply</option>
-                        </select>
-                      </div>
-
-                      <div class="col-lg-3 col-md-4 col-sm-6 form-group">
-                        <label>Users Job Type</label>
-                        <select
-                          class="form-select"
-                          data-placeholder="Select a Job Type"
-                        >
-                          <option value=""></option>
-                          <option value="1">Qualification 1</option>
-                          <option value="2">Qualification 2</option>
-                          <option value="2">Qualification 3</option>
-                          <option value="2">Qualification 4</option>
-                          <option value="2">Qualification 5</option>
-                          <option value="1">Qualification 6</option>
-                          <option value="2">Qualification 7</option>
-                          <option value="2">Qualification 8</option>
-                          <option value="2">Qualification 9</option>
-                          <option value="2">Qualification 10</option>
-                        </select>
-                      </div>
-                    </div>
-                  </fieldset>
-                  <fieldset class="scheduler-border">
-                    <legend class="scheduler-border">Financial</legend>
-                    <div class="row">
-                      <div class="col-lg-3 col-md-4 col-sm-6 form-group">
-                        <label>User Discount Mapping </label>
-                        <select
-                          class="form-select"
-                          data-placeholder="Select"
-                        >
-                          <option value=""></option>
-                          <option value="1">Qualification 1</option>
-                          <option value="2">Qualification 2</option>
-                          <option value="2">Qualification 3</option>
-                          <option value="2">Qualification 4</option>
-                          <option value="2">Qualification 5</option>
-                          <option value="1">Qualification 6</option>
-                          <option value="2">Qualification 7</option>
-                          <option value="2">Qualification 8</option>
-                          <option value="2">Qualification 9</option>
-                          <option value="2">Qualification 10</option>
-                        </select>
-                      </div>
-                      <div class="clear visible-md visible-sm"></div>
-
-                      <div class="col-lg-3 col-md-4 col-xs-6 form-group mt-5">
-                        <div class="checkbox">
-                          <label class="mt-10"
-                            ><input type="checkbox" />Update Fin. Price
-                          </label>
+                        <div class="col-lg-3 col-md-4 col-sm-6 form-group">
+                          <label>Audit Level</label>
+                          <select class="form-select">
+                            <option value=""></option>
+                            <option value="1">Level 1</option>
+                            <option value="2">Level 2</option>
+                            <option value="3">Level 3</option>
+                            <option value="A">ALL</option>
+                          </select>
                         </div>
                       </div>
 
-                      <div class="clear visible-lg visible-sm"></div>
-                    </div>
-                  </fieldset>
+                      <div class="row">
+                        <div class="col-lg-6 col-md-6 col-xs-6">
+                          <div class="checkbox">
+                            <label><input type="checkbox" />Web Administrator</label>
+                          </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-xs-6">
+                          <div class="checkbox">
+                            <label><input type="checkbox" formControlName="ustllr" />Web
+                              Teller</label>
+                          </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-xs-6">
+                          <div class="checkbox">
+                            <label><input type="checkbox" formControlName="usadmn" />Web
+                              Database Administrator
+                            </label>
+                          </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-xs-6">
+                          <div class="checkbox">
+                            <label><input type="checkbox" />Web Database Web Black
+                              List Patient
+                            </label>
+                          </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-xs-6">
+                          <div class="checkbox">
+                            <label><input type="checkbox" />User Can Verify Pharmacy
+                              Order</label>
+                          </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-xs-6">
+                          <div class="checkbox">
+                            <label><input type="checkbox" />Force Package Contain
+                              Items</label>
+                          </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-xs-6">
+                          <div class="checkbox">
+                            <label><input type="checkbox" />Change Charge Date
+                              Authority</label>
+                          </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-xs-6">
+                          <div class="checkbox">
+                            <label><input type="checkbox" />Show Order Level</label>
+                          </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-xs-6">
+                          <div class="checkbox">
+                            <label><input type="checkbox" />Allow Changing Charge
+                              N/S</label>
+                          </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-xs-6">
+                          <div class="checkbox">
+                            <label><input type="checkbox" />User deal with Future
+                              Setup</label>
+                          </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-xs-6">
+                          <div class="checkbox">
+                            <label><input type="checkbox" />Allow VIP
+                              Pre-admission</label>
+                          </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-xs-6">
+                          <div class="checkbox">
+                            <label><input type="checkbox" />return Drug in closed
+                              Acc.</label>
+                          </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-xs-6">
+                          <div class="checkbox">
+                            <label><input type="checkbox" />Booking Of Blocked
+                              Patient</label>
+                          </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-xs-6">
+                          <div class="checkbox">
+                            <label><input type="checkbox" />Clear Blocking due to no
+                              show</label>
+                          </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-xs-6">
+                          <div class="checkbox">
+                            <label><input type="checkbox" />Change Admission
+                              Date</label>
+                          </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-xs-6">
+                          <div class="checkbox">
+                            <label><input type="checkbox" />User Can Generate Final
+                              Bill</label>
+                          </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-xs-6">
+                          <div class="checkbox">
+                            <label><input type="checkbox" />User Can delete from
+                              Regenerate</label>
+                          </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-xs-6">
+                          <div class="checkbox">
+                            <label><input type="checkbox" />Update Financial Category
+                              Final Bill
+                            </label>
+                          </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-xs-6">
+                          <div class="checkbox">
+                            <label><input type="checkbox" />Disable Continue
+                              Processing</label>
+                          </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-xs-6">
+                          <div class="checkbox">
+                            <label><input type="checkbox" />Update Financial Category
+                              through certain period</label>
+                          </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-xs-6">
+                          <div class="checkbox">
+                            <label><input type="checkbox" />Allow Update Price /
+                              Cost</label>
+                          </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-xs-6">
+                          <div class="checkbox">
+                            <label><input type="checkbox" />Withdraw Authority</label>
+                          </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-xs-6">
+                          <div class="checkbox">
+                            <label><input type="checkbox" />Deposit Authority</label>
+                          </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-xs-6">
+                          <div class="checkbox">
+                            <label><input type="checkbox" />Allow User to Update all
+                              batches Price
+                            </label>
+                          </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-xs-6">
+                          <div class="checkbox">
+                            <label><input type="checkbox" />Supervisor Auditing</label>
+                          </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-xs-6">
+                          <div class="checkbox">
+                            <label><input type="checkbox" />Re-print receipt For
+                              Appointment</label>
+                          </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-xs-6">
+                          <div class="checkbox">
+                            <label><input type="checkbox" />Enable fix hashing problem
+                              in single app</label>
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+                    <fieldset class="scheduler-border">
+                      <legend class="scheduler-border">Work & Dep.</legend>
+                      <div class="row">
+                        <div class="col-lg-3 col-md-4 col-sm-6 form-group">
+                          <label>Nurse Station</label>
+                          <select class="form-select" data-placeholder="Select a Nurse Station"
+                            formControlName="usnscd">
+                            <option value=""></option>
+                            <option value="1">Qualification 1</option>
+                            <option value="2">Qualification 2</option>
+                            <option value="2">Qualification 3</option>
+                            <option value="2">Qualification 4</option>
+                            <option value="2">Qualification 5</option>
+                            <option value="1">Qualification 6</option>
+                            <option value="2">Qualification 7</option>
+                            <option value="2">Qualification 8</option>
+                            <option value="2">Qualification 9</option>
+                            <option value="2">Qualification 10</option>
+                          </select>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 form-group">
+                          <label>Hospital</label>
+                          <select class="form-select" data-placeholder="Select a Hospital"
+                            formControlName="hospitalCode">
+                            <option value=""></option>
+                            <option value="1">Qualification 1</option>
+                            <option value="2">Qualification 2</option>
+                            <option value="2">Qualification 3</option>
+                            <option value="2">Qualification 4</option>
+                            <option value="2">Qualification 5</option>
+                            <option value="1">Qualification 6</option>
+                            <option value="2">Qualification 7</option>
+                            <option value="2">Qualification 8</option>
+                            <option value="2">Qualification 9</option>
+                            <option value="2">Qualification 10</option>
+                          </select>
+                        </div>
 
-                  <fieldset class="scheduler-border">
-                    <legend class="scheduler-border">User Data 3</legend>
-                    <div class="row"></div>
-                  </fieldset>
+                        <div class="col-lg-3 col-md-4 col-sm-6 form-group">
+                          <label>User Order Department</label>
+                          <select class="form-select" formControlName="usorderDep">
+                            <option value=""></option>
+                            <option value="1">Qualification 1</option>
+                            <option value="2">Qualification 2</option>
+                            <option value="2">Qualification 3</option>
+                            <option value="2">Qualification 4</option>
+                            <option value="2">Qualification 5</option>
+                            <option value="1">Qualification 6</option>
+                            <option value="2">Qualification 7</option>
+                            <option value="2">Qualification 8</option>
+                            <option value="2">Qualification 9</option>
+                            <option value="2">Qualification 10</option>
+                          </select>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 form-group">
+                          <label>Dept. Classification</label>
+                          <select class="form-select">
+                            <option value=""></option>
+                            <option value="1">Qualification 1</option>
+                            <option value="2">Qualification 2</option>
+                            <option value="2">Qualification 3</option>
+                            <option value="2">Qualification 4</option>
+                            <option value="2">Qualification 5</option>
+                            <option value="1">Qualification 6</option>
+                            <option value="2">Qualification 7</option>
+                            <option value="2">Qualification 8</option>
+                            <option value="2">Qualification 9</option>
+                            <option value="2">Qualification 10</option>
+                          </select>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 form-group">
+                          <label>Stock Type</label>
+                          <select class="form-select" formControlName="usstck">
+                            <option value=""></option>
+                            <option value="BO">Both</option>
+                            <option value="DR">Drug</option>
+                            <option value="SU">Supply</option>
+                          </select>
+                        </div>
+
+                        <div class="col-lg-3 col-md-4 col-sm-6 form-group">
+                          <label>Users Job Type</label>
+                          <select class="form-select" data-placeholder="Select a Job Type">
+                            <option value=""></option>
+                            <option value="1">Qualification 1</option>
+                            <option value="2">Qualification 2</option>
+                            <option value="2">Qualification 3</option>
+                            <option value="2">Qualification 4</option>
+                            <option value="2">Qualification 5</option>
+                            <option value="1">Qualification 6</option>
+                            <option value="2">Qualification 7</option>
+                            <option value="2">Qualification 8</option>
+                            <option value="2">Qualification 9</option>
+                            <option value="2">Qualification 10</option>
+                          </select>
+                        </div>
+                      </div>
+                    </fieldset>
+                    <fieldset class="scheduler-border">
+                      <legend class="scheduler-border">Financial</legend>
+                      <div class="row">
+                        <div class="col-lg-3 col-md-4 col-sm-6 form-group">
+                          <label>User Discount Mapping </label>
+                          <select class="form-select" data-placeholder="Select">
+                            <option value=""></option>
+                            <option value="1">Qualification 1</option>
+                            <option value="2">Qualification 2</option>
+                            <option value="2">Qualification 3</option>
+                            <option value="2">Qualification 4</option>
+                            <option value="2">Qualification 5</option>
+                            <option value="1">Qualification 6</option>
+                            <option value="2">Qualification 7</option>
+                            <option value="2">Qualification 8</option>
+                            <option value="2">Qualification 9</option>
+                            <option value="2">Qualification 10</option>
+                          </select>
+                        </div>
+                        <div class="clear visible-md visible-sm"></div>
+
+                        <div class="col-lg-3 col-md-4 col-xs-6 form-group mt-5">
+                          <div class="checkbox">
+                            <label class="mt-10"><input type="checkbox" />Update Fin. Price
+                            </label>
+                          </div>
+                        </div>
+
+                        <div class="clear visible-lg visible-sm"></div>
+                      </div>
+                    </fieldset>
+
+                    <fieldset class="scheduler-border">
+                      <legend class="scheduler-border">User Data 3</legend>
+                      <div class="row"></div>
+                    </fieldset>
+                  </div>
                 </div>
-              </div>
 
                 <div class="row">
-                  <div class="addNewRow" data-target="#userNC">
+                  <div class="addNewRow" data-bs-target="#userNC">
                     <h3>
                       Add
                       <a href="#" class="glyphicon glyphicon-plus"></a>
                     </h3>
                   </div>
                   <div class="table-responsive">
-                    <table
-                      class="table table-striped"
-                      cellspacing="0"
-                      cellpadding="0"
-                    >
+                    <table class="table table-striped" cellspacing="0" cellpadding="0">
                       <colgroup>
                         <col style="width: 50px" />
                         <col />
@@ -808,18 +660,11 @@
                       <tbody>
                         <tr>
                           <td class="text-center">
-                            <a href="#" class="icon-click"
-                              ><span
-                                class="glyphicon glyphicon-trash t-delete"
-                                title="Delete"
-                              ></span
-                            ></a>
+                            <a href="#" class="icon-click"><span class="glyphicon glyphicon-trash t-delete"
+                                title="Delete"></span></a>
                           </td>
                           <td>
-                            <select
-                              class="form-select"
-                              data-placeholder="Select a Nurse Station"
-                            >
+                            <select class="form-select" data-placeholder="Select a Nurse Station">
                               <option value=""></option>
                               <option value="1">Nurse Station 1</option>
                               <option value="2">Nurse Station 2</option>
@@ -830,18 +675,11 @@
                         </tr>
                         <tr class="new-row" role="row">
                           <td class="text-center">
-                            <a href="#" class="icon-click"
-                              ><span
-                                class="glyphicon glyphicon-trash t-delete"
-                                title="Delete"
-                              ></span
-                            ></a>
+                            <a href="#" class="icon-click"><span class="glyphicon glyphicon-trash t-delete"
+                                title="Delete"></span></a>
                           </td>
                           <td>
-                            <select
-                              class="form-select"
-                              data-placeholder="Select a Nurse Station"
-                            >
+                            <select class="form-select" data-placeholder="Select a Nurse Station">
                               <option value=""></option>
                               <option value="1">Nurse Station 1</option>
                               <option value="2">Nurse Station 2</option>
@@ -860,20 +698,11 @@
                   <div>
                     <ul class="nav nav-tabs">
                       <li class="active">
-                        <a
-                          data-toggle="tab"
-                          href="#FcSetup"
-                          aria-expanded="true"
-                          >F/C Setup</a
-                        >
+                        <a data-bs-toggle="tab" href="#FcSetup" aria-expanded="true">F/C Setup</a>
                       </li>
                       <li class="">
-                        <a
-                          data-toggle="tab"
-                          href="#FcAuthority"
-                          aria-expanded="false"
-                          >F/C Authority</a
-                        >
+                        <a data-bs-toggle="tab" href="#FcAuthority" aria-expanded="false">F/C
+                          Authority</a>
                       </li>
                     </ul>
                     <div class="tab-content">
@@ -881,46 +710,34 @@
                         <div class="row">
                           <div class="col-lg-3 col-md-4 col-xs-6">
                             <div class="checkbox">
-                              <label
-                                ><input type="checkbox" />Financial Tab</label
-                              >
+                              <label><input type="checkbox" />Financial Tab</label>
                             </div>
                           </div>
                           <div class="col-lg-3 col-md-4 col-xs-6">
                             <div class="checkbox">
-                              <label
-                                ><input type="checkbox" />Operation Tab</label
-                              >
+                              <label><input type="checkbox" />Operation Tab</label>
                             </div>
                           </div>
                           <div class="col-lg-3 col-md-4 col-xs-6">
                             <div class="checkbox">
-                              <label
-                                ><input type="checkbox" />Services Tab</label
-                              >
+                              <label><input type="checkbox" />Services Tab</label>
                             </div>
                           </div>
                           <div class="col-lg-3 col-md-4 col-xs-6">
                             <div class="checkbox">
-                              <label
-                                ><input type="checkbox" />Comments Tab</label
-                              >
+                              <label><input type="checkbox" />Comments Tab</label>
                             </div>
                           </div>
                           <div class="col-lg-3 col-md-4 col-xs-6">
                             <div class="checkbox">
-                              <label
-                                ><input type="checkbox" />Extra Charges
-                                Tab</label
-                              >
+                              <label><input type="checkbox" />Extra Charges
+                                Tab</label>
                             </div>
                           </div>
                           <div class="col-lg-3 col-md-4 col-xs-6">
                             <div class="checkbox">
-                              <label
-                                ><input type="checkbox" />Accommodation
-                                Tab</label
-                              >
+                              <label><input type="checkbox" />Accommodation
+                                Tab</label>
                             </div>
                           </div>
                           <div class="col-lg-3 col-md-4 col-xs-6">
@@ -930,9 +747,7 @@
                           </div>
                           <div class="col-lg-3 col-md-4 col-xs-6">
                             <div class="checkbox">
-                              <label
-                                ><input type="checkbox" />Doctors Tab</label
-                              >
+                              <label><input type="checkbox" />Doctors Tab</label>
                             </div>
                           </div>
                           <div class="col-lg-3 col-md-4 col-xs-6">
@@ -942,39 +757,29 @@
                           </div>
                           <div class="col-lg-3 col-md-4 col-xs-6">
                             <div class="checkbox">
-                              <label
-                                ><input type="checkbox" />English Users
-                                Tab</label
-                              >
+                              <label><input type="checkbox" />English Users
+                                Tab</label>
                             </div>
                           </div>
                           <div class="col-lg-3 col-md-4 col-xs-6">
                             <div class="checkbox">
-                              <label
-                                ><input type="checkbox" />Package Tab</label
-                              >
+                              <label><input type="checkbox" />Package Tab</label>
                             </div>
                           </div>
                           <div class="col-lg-3 col-md-4 col-xs-6">
                             <div class="checkbox">
-                              <label
-                                ><input type="checkbox" />English Charges
-                                Tab</label
-                              >
+                              <label><input type="checkbox" />English Charges
+                                Tab</label>
                             </div>
                           </div>
                           <div class="col-lg-3 col-md-4 col-xs-6">
                             <div class="checkbox">
-                              <label
-                                ><input type="checkbox" />Approval Tab</label
-                              >
+                              <label><input type="checkbox" />Approval Tab</label>
                             </div>
                           </div>
                           <div class="col-lg-3 col-md-4 col-xs-6">
                             <div class="checkbox">
-                              <label
-                                ><input type="checkbox" />Conditions Tab</label
-                              >
+                              <label><input type="checkbox" />Conditions Tab</label>
                             </div>
                           </div>
                         </div>
@@ -983,11 +788,7 @@
                         <div class="row">
                           <div class="scheduler">
                             <div class="table-responsive">
-                              <table
-                                class="table table-striped"
-                                cellspacing="0"
-                                cellpadding="0"
-                              >
+                              <table class="table table-striped" cellspacing="0" cellpadding="0">
                                 <thead>
                                   <tr>
                                     <th></th>
@@ -1003,63 +804,31 @@
                                       Deal With Change Financial Category Online
                                     </td>
                                     <td class="text-center">
-                                      <input
-                                        type="checkbox"
-                                        class=""
-                                        name="1"
-                                      />
+                                      <input type="checkbox" class="" name="1" />
                                     </td>
                                     <td class="text-center">
-                                      <input
-                                        type="checkbox"
-                                        class=""
-                                        name="1"
-                                      />
+                                      <input type="checkbox" class="" name="1" />
                                     </td>
                                     <td class="text-center">
-                                      <input
-                                        type="checkbox"
-                                        class=""
-                                        name="1"
-                                      />
+                                      <input type="checkbox" class="" name="1" />
                                     </td>
                                     <td class="text-center">
-                                      <input
-                                        type="checkbox"
-                                        class=""
-                                        name="1"
-                                      />
+                                      <input type="checkbox" class="" name="1" />
                                     </td>
                                   </tr>
                                   <tr>
                                     <td>Change Financial Category From Cash</td>
                                     <td class="text-center">
-                                      <input
-                                        type="checkbox"
-                                        class=""
-                                        name="1"
-                                      />
+                                      <input type="checkbox" class="" name="1" />
                                     </td>
                                     <td class="text-center">
-                                      <input
-                                        type="checkbox"
-                                        class=""
-                                        name="1"
-                                      />
+                                      <input type="checkbox" class="" name="1" />
                                     </td>
                                     <td class="text-center">
-                                      <input
-                                        type="checkbox"
-                                        class=""
-                                        name="1"
-                                      />
+                                      <input type="checkbox" class="" name="1" />
                                     </td>
                                     <td class="text-center">
-                                      <input
-                                        type="checkbox"
-                                        class=""
-                                        name="1"
-                                      />
+                                      <input type="checkbox" class="" name="1" />
                                     </td>
                                   </tr>
                                   <tr>
@@ -1067,63 +836,31 @@
                                       Change Financial Category From Credit
                                     </td>
                                     <td class="text-center">
-                                      <input
-                                        type="checkbox"
-                                        class=""
-                                        name="1"
-                                      />
+                                      <input type="checkbox" class="" name="1" />
                                     </td>
                                     <td class="text-center">
-                                      <input
-                                        type="checkbox"
-                                        class=""
-                                        name="1"
-                                      />
+                                      <input type="checkbox" class="" name="1" />
                                     </td>
                                     <td class="text-center">
-                                      <input
-                                        type="checkbox"
-                                        class=""
-                                        name="1"
-                                      />
+                                      <input type="checkbox" class="" name="1" />
                                     </td>
                                     <td class="text-center">
-                                      <input
-                                        type="checkbox"
-                                        class=""
-                                        name="1"
-                                      />
+                                      <input type="checkbox" class="" name="1" />
                                     </td>
                                   </tr>
                                   <tr>
                                     <td>Update Financial Category From Cash</td>
                                     <td class="text-center">
-                                      <input
-                                        type="checkbox"
-                                        class=""
-                                        name="1"
-                                      />
+                                      <input type="checkbox" class="" name="1" />
                                     </td>
                                     <td class="text-center">
-                                      <input
-                                        type="checkbox"
-                                        class=""
-                                        name="1"
-                                      />
+                                      <input type="checkbox" class="" name="1" />
                                     </td>
                                     <td class="text-center">
-                                      <input
-                                        type="checkbox"
-                                        class=""
-                                        name="1"
-                                      />
+                                      <input type="checkbox" class="" name="1" />
                                     </td>
                                     <td class="text-center">
-                                      <input
-                                        type="checkbox"
-                                        class=""
-                                        name="1"
-                                      />
+                                      <input type="checkbox" class="" name="1" />
                                     </td>
                                   </tr>
                                   <tr>
@@ -1131,63 +868,31 @@
                                       Update Financial Category From Credit
                                     </td>
                                     <td class="text-center">
-                                      <input
-                                        type="checkbox"
-                                        class=""
-                                        name="1"
-                                      />
+                                      <input type="checkbox" class="" name="1" />
                                     </td>
                                     <td class="text-center">
-                                      <input
-                                        type="checkbox"
-                                        class=""
-                                        name="1"
-                                      />
+                                      <input type="checkbox" class="" name="1" />
                                     </td>
                                     <td class="text-center">
-                                      <input
-                                        type="checkbox"
-                                        class=""
-                                        name="1"
-                                      />
+                                      <input type="checkbox" class="" name="1" />
                                     </td>
                                     <td class="text-center">
-                                      <input
-                                        type="checkbox"
-                                        class=""
-                                        name="1"
-                                      />
+                                      <input type="checkbox" class="" name="1" />
                                     </td>
                                   </tr>
                                   <tr>
                                     <td>Update Financial Category From Both</td>
                                     <td class="text-center">
-                                      <input
-                                        type="checkbox"
-                                        class=""
-                                        name="1"
-                                      />
+                                      <input type="checkbox" class="" name="1" />
                                     </td>
                                     <td class="text-center">
-                                      <input
-                                        type="checkbox"
-                                        class=""
-                                        name="1"
-                                      />
+                                      <input type="checkbox" class="" name="1" />
                                     </td>
                                     <td class="text-center">
-                                      <input
-                                        type="checkbox"
-                                        class=""
-                                        name="1"
-                                      />
+                                      <input type="checkbox" class="" name="1" />
                                     </td>
                                     <td class="text-center">
-                                      <input
-                                        type="checkbox"
-                                        class=""
-                                        name="1"
-                                      />
+                                      <input type="checkbox" class="" name="1" />
                                     </td>
                                   </tr>
                                 </tbody>
@@ -1202,18 +907,14 @@
 
 
                 <div class="row">
-                  <div class="addNewRow" data-target="#groupMails">
+                  <div class="addNewRow" data-bs-target="#groupMails">
                     <h3>
                       Add
                       <a href="#" class="glyphicon glyphicon-plus"></a>
                     </h3>
                   </div>
                   <div class="table-responsive">
-                    <table
-                      class="table table-striped"
-                      cellspacing="0"
-                      cellpadding="0"
-                    >
+                    <table class="table table-striped" cellspacing="0" cellpadding="0">
                       <colgroup>
                         <col style="width: 50px" />
                         <col />
@@ -1229,12 +930,8 @@
                       <tbody>
                         <tr>
                           <td class="text-center">
-                            <a href="#" class="icon-click"
-                              ><span
-                                class="glyphicon glyphicon-trash t-delete"
-                                title="Delete"
-                              ></span
-                            ></a>
+                            <a href="#" class="icon-click"><span class="glyphicon glyphicon-trash t-delete"
+                                title="Delete"></span></a>
                           </td>
 
                           <td>
@@ -1246,12 +943,8 @@
                         </tr>
                         <tr class="new-row" role="row">
                           <td class="text-center">
-                            <a href="#" class="icon-click"
-                              ><span
-                                class="glyphicon glyphicon-trash t-delete"
-                                title="Delete"
-                              ></span
-                            ></a>
+                            <a href="#" class="icon-click"><span class="glyphicon glyphicon-trash t-delete"
+                                title="Delete"></span></a>
                           </td>
                           <td>
                             <input type="text" class="form-control" value="" />
@@ -1267,18 +960,14 @@
 
 
                 <div class="row">
-                  <div class="addNewRow" data-target="#userServices">
+                  <div class="addNewRow" data-bs-target="#userServices">
                     <h3>
                       Add
                       <a href="#" class="glyphicon glyphicon-plus"></a>
                     </h3>
                   </div>
                   <div class="table-responsive">
-                    <table
-                      class="table table-striped"
-                      cellspacing="0"
-                      cellpadding="0"
-                    >
+                    <table class="table table-striped" cellspacing="0" cellpadding="0">
                       <colgroup>
                         <col style="width: 50px" />
                         <col />
@@ -1292,33 +981,19 @@
                       <tbody>
                         <tr>
                           <td class="text-center">
-                            <a href="#" class="icon-click"
-                              ><span
-                                class="glyphicon glyphicon-trash t-delete"
-                                title="Delete"
-                              ></span
-                            ></a>
+                            <a href="#" class="icon-click"><span class="glyphicon glyphicon-trash t-delete"
+                                title="Delete"></span></a>
                           </td>
 
                           <td>
                             <div class="input-group">
-                              <input
-                                type="text"
-                                class="form-control left mr-5 charge-item-value"
-                                value=""
-                                disabled=""
-                              />
+                              <input type="text" class="form-control left me-2 charge-item-value" value=""
+                                disabled="" />
 
                               <div class="input-group-btn">
-                                <a
-                                  class="text-decoration-none outnone openBrowser"
-                                  href="#"
-                                  data-toggle="modal"
-                                  data-target="#serviceBrowser"
-                                >
-                                  <span
-                                    class="glyphicon glyphicon-search"
-                                  ></span>
+                                <a class="text-decoration-none outnone openBrowser" href="#" data-bs-toggle="modal"
+                                  data-bs-target="#serviceBrowser">
+                                  <span class="glyphicon glyphicon-search"></span>
                                 </a>
                               </div>
                             </div>
@@ -1326,32 +1001,18 @@
                         </tr>
                         <tr class="new-row" role="row">
                           <td class="text-center">
-                            <a href="#" class="icon-click"
-                              ><span
-                                class="glyphicon glyphicon-trash t-delete"
-                                title="Delete"
-                              ></span
-                            ></a>
+                            <a href="#" class="icon-click"><span class="glyphicon glyphicon-trash t-delete"
+                                title="Delete"></span></a>
                           </td>
                           <td>
                             <div class="input-group">
-                              <input
-                                type="text"
-                                class="form-control left mr-5 charge-item-value"
-                                value=""
-                                disabled=""
-                              />
+                              <input type="text" class="form-control left me-2 charge-item-value" value=""
+                                disabled="" />
 
                               <div class="input-group-btn">
-                                <a
-                                  class="text-decoration-none outnone openBrowser"
-                                  href="#"
-                                  data-toggle="modal"
-                                  data-target="#serviceBrowser"
-                                >
-                                  <span
-                                    class="glyphicon glyphicon-search"
-                                  ></span>
+                                <a class="text-decoration-none outnone openBrowser" href="#" data-bs-toggle="modal"
+                                  data-bs-target="#serviceBrowser">
+                                  <span class="glyphicon glyphicon-search"></span>
                                 </a>
                               </div>
                             </div>
@@ -1364,18 +1025,14 @@
 
 
                 <div class="row">
-                  <div class="addNewRow" data-target="#hosiptal">
+                  <div class="addNewRow" data-bs-target="#hosiptal">
                     <h3>
                       Add
                       <a href="#" class="glyphicon glyphicon-plus"></a>
                     </h3>
                   </div>
                   <div class="table-responsive">
-                    <table
-                      class="table table-striped"
-                      cellspacing="0"
-                      cellpadding="0"
-                    >
+                    <table class="table table-striped" cellspacing="0" cellpadding="0">
                       <colgroup>
                         <col style="width: 50px" />
                         <col />
@@ -1390,83 +1047,47 @@
                       <tbody>
                         <tr>
                           <td class="text-center">
-                            <a href="#" class="icon-click"
-                              ><span
-                                class="glyphicon glyphicon-trash t-delete"
-                                title="Delete"
-                              ></span
-                            ></a>
+                            <a href="#" class="icon-click"><span class="glyphicon glyphicon-trash t-delete"
+                                title="Delete"></span></a>
                           </td>
 
                           <td>
                             <div class="input-group">
-                              <input
-                                type="text"
-                                class="form-control left mr-5 charge-item-value"
-                                value=""
-                                disabled=""
-                              />
+                              <input type="text" class="form-control left me-2 charge-item-value" value=""
+                                disabled="" />
 
                               <div class="input-group-btn">
-                                <a
-                                  class="text-decoration-none outnone openBrowser"
-                                  href="#"
-                                  data-toggle="modal"
-                                  data-target="#serviceBrowser"
-                                >
-                                  <span
-                                    class="glyphicon glyphicon-search"
-                                  ></span>
+                                <a class="text-decoration-none outnone openBrowser" href="#" data-bs-toggle="modal"
+                                  data-bs-target="#serviceBrowser">
+                                  <span class="glyphicon glyphicon-search"></span>
                                 </a>
                               </div>
                             </div>
                           </td>
                           <td class="text-center">
-                            <input
-                              type="checkbox"
-                              class="charge-item-value"
-                              checked=""
-                            />
+                            <input type="checkbox" class="charge-item-value" checked="" />
                           </td>
                         </tr>
                         <tr class="new-row" role="row">
                           <td class="text-center">
-                            <a href="#" class="icon-click"
-                              ><span
-                                class="glyphicon glyphicon-trash t-delete"
-                                title="Delete"
-                              ></span
-                            ></a>
+                            <a href="#" class="icon-click"><span class="glyphicon glyphicon-trash t-delete"
+                                title="Delete"></span></a>
                           </td>
                           <td>
                             <div class="input-group">
-                              <input
-                                type="text"
-                                class="form-control left mr-5 charge-item-value"
-                                value=""
-                                disabled=""
-                              />
+                              <input type="text" class="form-control left me-2 charge-item-value" value=""
+                                disabled="" />
 
                               <div class="input-group-btn">
-                                <a
-                                  class="text-decoration-none outnone openBrowser"
-                                  href="#"
-                                  data-toggle="modal"
-                                  data-target="#serviceBrowser"
-                                >
-                                  <span
-                                    class="glyphicon glyphicon-search"
-                                  ></span>
+                                <a class="text-decoration-none outnone openBrowser" href="#" data-bs-toggle="modal"
+                                  data-bs-target="#serviceBrowser">
+                                  <span class="glyphicon glyphicon-search"></span>
                                 </a>
                               </div>
                             </div>
                           </td>
                           <td class="text-center">
-                            <input
-                              type="checkbox"
-                              class="charge-item-value"
-                              checked=""
-                            />
+                            <input type="checkbox" class="charge-item-value" checked="" />
                           </td>
                         </tr>
                       </tbody>
@@ -1482,28 +1103,11 @@
                         <fieldset class="imgLoad">
                           <legend class="legend-upload">User Image</legend>
                           <div class="ImgUploadBlock">
-                            <img
-                              id="ImgPreview"
-                              src="{{userImage}}"
-                              class="preview1"
-                            />
-                            <input
-                              type="button"
-                              id="removeImage1"
-                              value="x"
-                              class="btn-rmv1"
-                            />
-                            <a href="" class="ZoomImg"
-                              ><i class="glyphicon glyphicon-zoom-in"></i
-                            ></a>
+                            <img id="ImgPreview" src="{{userImage}}" class="preview1" />
+                            <input type="button" id="removeImage1" value="x" class="btn-rmv1" />
+                            <a href="" class="ZoomImg"><i class="glyphicon glyphicon-zoom-in"></i></a>
                             <span class="btn_upload">
-                              <input
-                                type="file"
-                                id="imag"
-                                title=""
-                                class="input-img"
-                                (change)="getUserImage($event)"
-                              />
+                              <input type="file" id="imag" title="" class="input-img" (change)="getUserImage($event)" />
                               Upload Image
                             </span>
                           </div>
@@ -1514,15 +1118,9 @@
                           <legend class="legend-upload">User Signature</legend>
                           <div class="ImgUploadBlock">
                             <img id="ImgPreview2" src="{{signtureImage}}" class="preview2" />
-                            <input
-                              type="button"
-                              id="removeImage2"
-                              value="x"
-                              class="btn-rmv2"
-                            />
+                            <input type="button" id="removeImage2" value="x" class="btn-rmv2" />
                             <span class="btn_upload">
-                              <input type="file" id="imag2" title="" 
-                              (change)="getSignatureImage($event)"/> Upload
+                              <input type="file" id="imag2" title="" (change)="getSignatureImage($event)" /> Upload
                               Signature
                             </span>
                           </div>
@@ -1532,6 +1130,7 @@
                   </div>
                 </div>
 
+              </div>
             </div>
           </div>
         </div>
@@ -1540,5 +1139,3 @@
   </div>
 </form>
 <!--end real-content-->
-
-<!--end main-content-->

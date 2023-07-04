@@ -1,50 +1,49 @@
-<div class="main-content row">
-  <div class="page-title col-sm-12">
-      <h1>
-          <a href="HMIS-UserIndex.html" class="mr-5"><span
-                  class="left glyphicon glyphicon-chevron-left"></span></a>
-          User Profile List Test
-          <div class="tools right mb-5">
-              <a href="#" data-toggle="modal" data-target="#errorMsg"><span
-                      class="glyphicon glyphicon-floppy-disk"></span></a>
-          </div>
-      </h1>
-      <div class="clearfix"></div>
+<div class="main-content">
+    <div class="page-title">
+        <h1>
+            <a href="#" class="me-2"><span class="fas fa-chevron-left"></span></a>
+            User Profile List Test
+            <div class="tools float-end mb-2">
+                <a href="#"><span class="fas fa-save"></span></a>
+            </div>
+        </h1>
 
-  </div>
-  <!-- end page-title -->
-  <div class="real-content">
-      <!---->
-      <div class="col-md-12">
+    </div>
+    <!-- end page-title -->
+    <div class="real-content">
+        <div class="row">
+            <div class="col-md-12">
 
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th scope="col">Action</th>
-              <th scope="col">id</th>
-              <th scope="col">code</th>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Action</th>
+                            <th scope="col">id</th>
+                            <th scope="col">code</th>
 
-              <th scope="col">Name</th>
-              <th scope="col">Active</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let userprofile of userProfileList; index as i">
-              <!-- <th scope="row">{{ i + 1 }}</th> -->
-              <td> <a class="btn btn-warning" routerLink="/userprofile/{{userprofile.id}}/edit">Edit</a>
-                <a class="btn btn-success"  [routerLink]="['/userprofile/',userprofile.id]">Details</a></td>
-              <td> {{ userprofile.id }}</td>
-              <td> {{ userprofile.code }}</td>
-              <td>{{ userprofile.enName }}</td>
-              <td>{{ userprofile.active }}</td>
-            </tr>
-          </tbody>
-        </table>
+                            <th scope="col">Name</th>
+                            <th scope="col">Active</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let userprofile of userProfileList; index as i">
+                            <!-- <th scope="row">{{ i + 1 }}</th> -->
+                            <td> <a class="btn btn-warning" routerLink="/userprofile/{{userprofile.id}}/edit">Edit</a>
+                                <a class="btn btn-success" [routerLink]="['/userprofile/',userprofile.id]">Details</a>
+                            </td>
+                            <td> {{ userprofile.id }}</td>
+                            <td> {{ userprofile.code }}</td>
+                            <td>{{ userprofile.enName }}</td>
+                            <td>{{ userprofile.active }}</td>
+                        </tr>
+                    </tbody>
+                </table>
 
 
-      </div>
+            </div>
+        </div>
 
-  </div>
+    </div>
 </div>
 <!--end real-content-->
 
