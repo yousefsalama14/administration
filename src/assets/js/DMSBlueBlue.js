@@ -7,9 +7,6 @@
  */
 
 // Content resizable width
-function sayHello(){
-  console.log("Hello Ahmed")
-}
 function sizing() {
     $(document).ready(function () {
         var windowHeight = $(window).height(),

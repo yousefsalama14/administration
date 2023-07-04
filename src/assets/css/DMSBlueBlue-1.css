@@ -1,8 +1,8 @@
 /*!
  *
  * Name             : DMSBlueBlue
- * Version          : 0.17
- * Last Modified    : 18/10/2021
+ * Version          : 0.16
+ * Last Modified    : 10/10/2020
  *
  */
 
@@ -126,16 +126,13 @@ h3 {
     margin-top: 0;
 }
 
-h3 .glyphicon, table.table h3 .glyphicon, h3 .fa, h3 .far, h3 .fas  {
+h3 .glyphicon, table.table h3 .glyphicon  {
     border: 2px solid #1e6bac;
     border-radius: 50%;
     color: #1e6bac;
     font-size: 12px;
-    width: 21px;
-    height: 21px;
-    padding: 3px 3px 3px 3px;
+    padding: 3px 3px 3px 4px;
     font-weight: bold;
-    text-decoration: none;
     cursor: pointer;
     transition: all 0.4s;
     -webkit-transition: all 0.4s;
@@ -144,7 +141,7 @@ h3 .glyphicon, table.table h3 .glyphicon, h3 .fa, h3 .far, h3 .fas  {
     -ms-transition: all 0.4s;
 }
 
-h3 .glyphicon.right, h3 .fa.right, h3 .far.right, h3 .fas.right {
+h3 .glyphicon.right {
     margin-left: 5px;
 }
 
@@ -183,10 +180,10 @@ h5 {
 
 label {
     text-transform: capitalize;
-    /*color: #1e6bac;*/
+    /*color: #1e6bac;
+    */
     color: #333;
     font-size: 11px;
-    font-weight: 700;
 }
 
 label .auth-message {
@@ -194,14 +191,6 @@ label .auth-message {
     font-size: 11px;
 }
 label.checkbox-inline {
-    line-height: 20px;
-}
-
-.form-check {
-    margin: 15px 0 0 0;
-}
-
-.form-check-label {
     line-height: 20px;
 }
 
@@ -248,20 +237,15 @@ label.checkbox-inline {
     margin: 0 2px 0 0;
 }
 
-.form-control, .form-select {
+.form-control {
     height: 22px;
     border-radius: 0;
     padding: 2px 5px;
     font-size: 12px;
 }
 
-.input-group-text {
-    height: 22px;
-}
-
 textarea.form-control {
     resize: none;
-    height: unset;
 }
 
 .form-btn {
@@ -271,9 +255,7 @@ textarea.form-control {
 
 .btn {
     border: none;
-    font-size: 12px;
     border-radius: 0;
-    padding: 6px 12px;
     text-transform: capitalize;
     transition: all 0.4s;
     -webkit-transition: all 0.4s;
@@ -377,16 +359,15 @@ textarea.form-control {
 }
 /***********************************************HEADER**********************************************/
 
-nav.header {
+.navbar-default {
     border: none;
     background: none;
     margin: 0;
     z-index: 501;
     min-height: 50px !important;
-    padding: 0;
 }
 
-nav.header .container-fluid {
+.navbar-default .container-fluid {
     padding-left: 0;
 }
 
@@ -396,7 +377,7 @@ nav.header .container-fluid {
     margin-left: 0 !important;
 }
 
-nav.header .navbar-toggle {
+.navbar-default .navbar-toggle {
     border: none;
     margin: 3px 15px 3px 0;
     transition: all 0.4s;
@@ -406,12 +387,12 @@ nav.header .navbar-toggle {
     -ms-transition: all 0.4s;
 }
 
-nav.header .navbar-toggle:focus,
-nav.header .navbar-toggle:hover {
+.navbar-default .navbar-toggle:focus,
+.navbar-default .navbar-toggle:hover {
     background: #ffb400;
 }
 
-nav.header .navbar-toggle .icon-bar {
+.navbar-default .navbar-toggle .icon-bar {
     background: #fff;
     transition: all 0.4s;
     -webkit-transition: all 0.4s;
@@ -420,17 +401,15 @@ nav.header .navbar-toggle .icon-bar {
     -ms-transition: all 0.4s;
 }
 
-nav.header .navbar-toggle:focus .icon-bar,
-nav.header .navbar-toggle:hover .icon-bar {
+.navbar-default .navbar-toggle:focus .icon-bar,
+.navbar-default .navbar-toggle:hover .icon-bar {
     background: #333;
 }
-nav.header .navbar-toggle{
-    display: none;
-}
+
 .menu-toggle {
     padding: 10px 5px;
-    margin-top: 7px;
-    margin-bottom: 7px;
+    margin-top: 8px;
+    margin-bottom: 8px;
     background-color: transparent;
     background-image: none;
     border: 1px solid transparent;
@@ -467,20 +446,20 @@ nav.header .navbar-toggle{
     font-size: 15px;
 }
 
-nav.header .navbar-nav > li > a.nav-link {
+.navbar-default .navbar-nav > li > a {
     color: #fff;
 }
 
-nav.header .navbar-nav > li > a:hover,
-nav.header .navbar-nav > li > a:focus,
-nav.header .navbar-nav > .open > a,
-nav.header .navbar-nav > .open > a:focus,
-nav.header .navbar-nav > .open > a:hover {
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:focus,
+.navbar-default .navbar-nav > .open > a:hover {
     background: none;
     color: #ffb400;
 }
 
-nav.header .main-link .glyphicon {
+.navbar-default .main-link .glyphicon {
     font-size: 18px;
     padding: 10px 10px 11px 10px;
     line-height: 17px !important;
@@ -490,16 +469,13 @@ nav.header .main-link .glyphicon {
     background: #fff;
     border: none;
     right: 10px;
-    left: unset;
     margin-top: -10px;
     min-width: 130px;
-    border-radius: 0;
-    box-shadow: 0 6px 12px rgba(0,0,0,.175);
 }
 
 .dropdown-menu > li > a {
-    /*color: #fff;*/
-    line-height: 1.42857143;
+    /*color: #fff;
+    */
     padding: 3px 10px;
     transition: all 0.4s;
     -webkit-transition: all 0.4s;
@@ -514,7 +490,7 @@ nav.header .main-link .glyphicon {
     background: #ffb400;
 }
 
-nav.header .main-link .dropdown-menu {
+.navbar-default .main-link .dropdown-menu {
     width: 230px;
     padding: 10px;
     right: -100px;
@@ -743,9 +719,6 @@ nav.header .main-link .dropdown-menu {
 
 }
 
-.second-menu>ul {
-    margin-bottom: 0;
-}
 
 .second-menu li a{
     padding: 10px;
@@ -830,28 +803,10 @@ nav.header .main-link .dropdown-menu {
     width: inherit;
     padding-bottom: 20px;
 }
-.content-header {
-    padding-top: 10px;
-    background: #1a3b51;
-}
-.content-header p {
-    text-transform: capitalize;
-    display: table-cell;
-    padding-bottom: 10px;
-}
-.content-header p:first-child {
-    color: #01f0f2;
-    padding-right: 5px;
-    white-space: nowrap;
-}
-.content-header p:last-child {
-    color: #fff;
-}
 
 .page-title {
     width: 100%;
     padding: 15px;
-	padding-left:9px;
 }
 
 .inner-title {
@@ -872,18 +827,13 @@ nav.header .main-link .dropdown-menu {
     line-height: 26px;
 }
 
-.page-title h1 .glyphicon,.page-title h1 .fa, .page-title h1 .far,.page-title h1 .fas,
+.page-title .glyphicon,
 .circle-icon {
-    display: inline-block;
     border: 3px solid #1e6bac;
     border-radius: 50%;
-    line-height: 16px;
+    line-height: 15px;
     color: #1e6bac;
     font-size: 15px;
-    width: 28px;
-    height: 28px;
-    text-align: center;
-    text-decoration: none;
     padding: 3px;
     cursor: pointer;
     transition: all 0.4s;
@@ -891,7 +841,7 @@ nav.header .main-link .dropdown-menu {
     -moz-transition: all 0.4s;
     -o-transition: all 0.4s;
     -ms-transition: all 0.4s;
-
+    display: inline-block;
 }
 
 .circle-icon.small {
@@ -989,14 +939,6 @@ h1 .glyphicon-floppy-disk {
 
 .nav-tabs {
     border: none;
-    z-index: 1;
-}
-.nav-tabs .nav-link {
-    border: 0;
-}
-
-.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
-    border-color: transparent;
 }
 
 .nav-tabs > li > a {
@@ -1008,10 +950,10 @@ h1 .glyphicon-floppy-disk {
     padding: 10px 10px 0 10px;
 }
 
-.nav-tabs > li > a.nav-link:hover,
-.nav-tabs > li.active > a,.nav-tabs > li > a.nav-link.active,
-.nav-tabs > li.active > a:focus,.nav-tabs > li > a.nav-link.active:focus,
-.nav-tabs > li.active > a:hover,.nav-tabs > li > a.nav-link.active:hover {
+.nav-tabs > li > a:hover,
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:focus,
+.nav-tabs > li.active > a:hover {
     border: 0;
     background: none;
     border-bottom: 3px solid #0070ae;
@@ -1050,17 +992,17 @@ h1 .glyphicon-floppy-disk {
 .table > thead > tr > td,
 .table > tbody > tr > td,
 .table > mTreeoot > tr > td {
-    padding: 9px;
-    box-shadow: none;
     border: none;
     font-size: 12px;
-    vertical-align: middle;
+    vertical-align: inherit;
 }
+
 .table > thead > tr > th,
 .table > tbody > tr > th {
     white-space: nowrap;
     font-size: 13px;
 }
+
 .table > thead > tr:first-child {
     background: none;
     border-bottom: 1px solid #1e6bac;
@@ -1075,11 +1017,11 @@ h1 .glyphicon-floppy-disk {
     white-space: nowrap;
 }
 
-.table-striped > tbody > tr:nth-of-type(2n+1) {
+.table-striped > tbody > tr:nth-of-type(even) {
     background: #e0e8f0;
 }
 
-.table-striped > tbody > tr:nth-of-type(2n) {
+.table-striped > tbody > tr:nth-of-type(odd) {
     background: none;
 }
 
@@ -1114,25 +1056,21 @@ h1 .glyphicon-floppy-disk {
     color:#ffffff;
 }
 
-.table .glyphicon, .table .fa, .table .far, .table .fas {
+.table .glyphicon {
     font-size: 15px;
 }
-.table .form-group .fa, .table .form-group .far, .table .form-group .fas
+
 .table .form-group .glyphicon {
     font-size: 12px;
 }
 
 .table .glyphicon:hover,
-.table .glyphicon:focus,
-.table .fa:hover, .table .far:hover, .table .fas:hover,
-.table .fa:hover, .table .far:hover, .table .fas:hover
-{
+.table .glyphicon:focus {
     text-decoration: none;
 }
 
 .table .glyphicon-remove,
-.table .glyphicon-trash,
-.table .fa-trash-alt {
+.table .glyphicon-trash {
     color: #ca4a4a;
 }
 
@@ -1200,9 +1138,6 @@ h1 .glyphicon-floppy-disk {
     border-bottom: 0;
     /*text-align: center;*/
     background: #2172a9;
-    -webkit-background-clip: border-box !important;
-    background-clip: padding-box;
-    
 }
 
 .table.dark-header tbody td {
@@ -1429,6 +1364,11 @@ ol.alert-message {
     line-height: 20px;
 }
 
+.square-icon i {
+    font-size: 12px;
+    color:#fff;
+    line-height: 20px;
+}
 /******************************************************In Line Edit*************************************/
 
 .inline-edit {
@@ -1437,7 +1377,6 @@ ol.alert-message {
 }
 
 .editMode .inline-edit .form-control,
-.editMode .inline-edit .form-select,
 .editMode .inline-edit .select2{
     display: block !important;
 }
@@ -1448,7 +1387,6 @@ ol.alert-message {
 .liveMode .input,
 .liveMode .inline-edit .select2,
 .liveMode .inline-edit .form-control,
-.liveMode .inline-edit .form-select,
 .liveMode .inline-edit .input-group,
 .liveMode .makeOnce,
 .liveMode .makeRepetitive {
@@ -1458,12 +1396,7 @@ ol.alert-message {
 .new-row{
     display: none;
 }
-.table > tbody > tr.notsaved td{
-    background: #f0ffddeb;
-}
-
-.table > tfoot > tr.notsaved td{
-    padding: 9px;
+.table > tbody > tr.notsaved td {
     background: #f0ffddeb;
 }
 /*****************************************************Sections *************************************/
@@ -1529,16 +1462,13 @@ ol.alert-message {
     -ms-transition: all 0.4s;
 }
 
-.filter-collapse-icon .glyphicon,.filter-collapse-icon .fa,.filter-collapse-icon .fas,.filter-collapse-icon .far {
-    position: relative;
+.filter-collapse-icon .glyphicon {
     border: none;
     border-radius: 0;
     cursor: pointer;
     background: #1e6bac;
     color: #fff;
-    font-size: 10px;
-    line-height: 15px;
-    width: 40px;
+    font-size: 7px;
     padding: 0px 15px;
     top: -5px;
     transition: all 0.4s;
@@ -1548,13 +1478,13 @@ ol.alert-message {
     -ms-transition: all 0.4s;
 }
 
-.page-title .filter-collapse-icon .glyphicon:hover,.page-title .filter-collapse-icon .fas:hover,
-.page-title .filter-collapse-icon .glyphicon:focus,.page-title .filter-collapse-icon .fas:focus {
+.page-title .filter-collapse-icon .glyphicon:hover,
+.page-title .filter-collapse-icon .glyphicon:focus {
     background: orange;
     color: #333;
 }
 
-.btn-primary .glyphicon,.btn-primary .fas,.btn-primary .far,.btn-primary .fa {
+.btn-primary .glyphicon {
     left: -2px;
     transition: all 0.4s;
     -webkit-transition: all 0.4s;
@@ -1566,20 +1496,19 @@ ol.alert-message {
     padding: 0;
 }
 
-.btn .glyphicon,.btn .fa, .btn .far, .btn .fas {
+.btn .glyphicon {
     color: #fff;
     font-size: 12px;
 }
 
-.btn-primary:hover .glyphicon,.btn-primary:hover .fa,.btn-primary:hover .fas,.btn-primary:hover .far,
-.btn-primary:focus .glyphicon,.btn-primary:focus .fa,.btn-primary:focus .fas,.btn-primary:focus .far {
+.btn-primary:hover .glyphicon,
+.btn-primary:focus .glyphicon {
     color: #333;
-    position: relative;
     left: -8px;
 }
 
-.btn .glyphicon:hover,.btn .fa:hover,.btn .far:hover,.btn .fas:hover,
-.btn .glyphicon:focus,.btn .fa:focus,.btn .far:focus,.btn .fas:focus {
+.btn .glyphicon:hover,
+.btn .glyphicon:focus {
     color: #fff;
 }
 
@@ -1610,13 +1539,7 @@ ol.alert-message {
 }
 
 table.dataTable {
-    border-collapse: collapse !important;
-}
-
-table.dataTable.dark-header {
-    border-collapse: collapse !important; /*canceled and added the next to lines to fix a firefox dark header border issue*/
-    border-collapse: separate !important;
-    border-spacing: 0px;
+    /*border-collapse: collapse !important;*/
 }
 /* ---------------------- Chosen jQuery Plugin ---------------------- */
 
@@ -1679,10 +1602,6 @@ table.dataTable.dark-header {
     -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
     box-shadow: inset 0 1px 1px
     rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
-    z-index: 1052;
-}
-.select2-container.select2-container--open{
-    z-index: 1060;
 }
 
 .select2-container .select2-selection--multiple .select2-selection__choice {
@@ -1706,7 +1625,7 @@ table.dataTable.dark-header {
 }
 
 @media (max-width: 768px) {
-    .form-inline .form-control, .form-inline .form-select {
+    .form-inline .form-control {
         display: inline-block;
         width: auto;
         vertical-align: middle;
@@ -1727,12 +1646,12 @@ table.dataTable.dark-header {
         padding-top: 5px;
     }
 
-    nav.header .navbar-nav .open .dropdown-menu > li > a {
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a {
         color: #fff;
     }
 
-    nav.header .navbar-nav .open .dropdown-menu > li > a:focus,
-    nav.header .navbar-nav .open .dropdown-menu > li > a:hover {
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus,
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover {
         color: #333;
         background: #ffb400;
     }
@@ -1778,7 +1697,7 @@ table.dataTable.dark-header {
         padding-top: 50px;
     }
 
-    nav.header {
+    .navbar-default {
         z-index: 5000;
     }
 
@@ -1962,7 +1881,6 @@ table.dataTable.dark-header {
     border-top: 1px solid rgba(0, 0, 0, 0.125);
     margin: 3px 4px 0;
     padding-top: 1px;
-    padding-left: 0;
 }
 .detailed-info-box .details li{
     padding: 5px;
@@ -2089,9 +2007,7 @@ table.dataTable.dark-header {
 .fg-white {
     color: #fff;
 }
-.fg-blue{
-    color: #296dac;
-}
+
 
 .indicators-list{
 
@@ -2146,7 +2062,6 @@ legend.fieldset-border {
 
 .modal.modal-wide .modal-dialog {
     width: 90%;
-    max-width: unset;
 }
 .modal-wide .modal-body {
     overflow-y: auto;
@@ -2170,7 +2085,7 @@ legend.fieldset-border {
 
 .Msg .modal-header {
     border-bottom: 0;
-	padding-bottom: 0;
+    padding: 0px;
     min-height: 0;
     border-top: 5px solid #3370aa;
 }
@@ -2326,8 +2241,6 @@ legend.fieldset-border {
     max-height: 70px;
     overflow: auto;
     margin-bottom: 0;
-    padding-left: 0;
-    padding-right: 0;
 }
 .item-list li {
     padding: 5px;
@@ -2509,9 +2422,9 @@ legend.fieldset-border {
     background: #ff54000f;
 }
 .callout-warning .callout-icon {
-    border-left-color: #ff5400;
-    background: #ff5400;
-}
+     border-left-color: #ff5400;
+     background: #ff5400;
+ }
 .callout-warning h4, .callout-warning button.close {
     color: #ff5400;
 }
@@ -2552,7 +2465,7 @@ legend.fieldset-border {
 
 
 /******************************************************Helper*************************************/
-/*
+
 .p-0 {
     padding: 0 !important
 }
@@ -3031,7 +2944,7 @@ legend.fieldset-border {
 
 .ml-50 {
     margin-left: 50px !important
-}*/
+}
 
 .pre-wrap {
     white-space: pre-wrap;
@@ -3146,104 +3059,3 @@ a.current,a.current:hover {
 }
 
 table.dataTable  tbody tr.selected, table tbody tr.selected {background-color: #B0BED9 !important;}
-
-
-/**************************** Bootstrap 5 Migration ******************************/
-.right-content{
-    padding-top: 0px;
-}
-
-.modal-title{
-    margin: 0;
-}
-.h4 .small, .h4 small, .h5 .small, .h5 small, .h6 .small, .h6 small, h4 .small, h4 small, h5 .small, h5 small, h6 .small, h6 small {
-    font-size: 75%;
-}
-
-.h1 .small, .h1 small, .h2 .small, .h2 small, .h3 .small, .h3 small, .h4 .small, .h4 small, .h5 .small, .h5 small, .h6 .small, .h6 small, h1 .small, h1 small, h2 .small, h2 small, h3 .small, h3 small, h4 .small, h4 small, h5 .small, h5 small, h6 .small, h6 small {
-    font-weight: 400;
-    line-height: 1;
-    color: #777;
-    font-size: 65%;
-}
-/************* Edits by yousef 4/10/2021 ***********/
-#inactiveOrders .searchableTh.searching select{
-    width: 100%;
-    padding-right: 26px;
-}
-a{
-    text-decoration: none;
-}
-table.dataTable.table-condensed .sorting:after, table.dataTable.table-condensed .sorting_asc:after, table.dataTable.table-condensed .sorting_desc:after,
-table.dataTable thead .sorting:after, table.dataTable thead .sorting_asc:after, table.dataTable thead .sorting_desc:after, table.dataTable thead .sorting_asc_disabled:after, table.dataTable thead .sorting_desc_disabled:after{
-    top: 0;
-    bottom: 0;
-    align-items: center;
-    display: flex;
-}
-.form-select{
-    background-position: right .25rem center;
-    background-size: 12px;
-    padding: 2px 17px 2px 3px;
-}
-
-/************************************ Edits by yousef 26/09/2021 ************************************/
-/****** Main *******/
-.left-main-link{
-    text-decoration: none;
-}
-.m-10 {
-    margin: 10px !important;
-}
-.left-col .left-nav .form-group label{
-    margin-bottom: 5px;
-}
-.btn-primary:focus .fa,
-.btn-primary:hover .fa{
-    left: 0;
-}
-.navbar-nav .dropdown-menu{
-    position: absolute;
-}
-.navbar .collapse:not(.show) {
-    display: flex;
-}
-.navbar-collapse {
-    flex-basis: initial;
-    flex-grow: initial;
-}
-.navbar-nav > li > .dropdown-menu{
-    margin-top:0;
-    border-radius: 0;
-    box-shadow: 0 6px 12px rgb(0 0 0 / 18%);
-}
-
-.right-content{
-    padding-top: 0;
-}
-nav.header{
-    padding:0;
-}
-.dropdown-menu > li > a{
-    line-height: 1.42857143;
-}
-.menu-toggle{
-    margin-top: 7px;
-    margin-bottom: 7px;
-}
-/** `md` applies to small devices (landscape phones, less than 768px) **/
-@media (max-width: 767.98px) { 
-    .menu-toggle{
-        display: block;
-    }
-    .left-col.active{
-        display: block;
-        position: fixed;
-    }
-    .left-nav{
-        padding-top: 10px;
-    }
-    .left-col .left-main-link span:nth-child(2){
-        display: initial !important;
-    }
- }
