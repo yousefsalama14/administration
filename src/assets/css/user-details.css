@@ -1,0 +1,65 @@
+/***** Vertical Tabs *****/
+
+.tabs-left {
+    border-bottom: none;
+    padding-top: 2px;
+    border-right: 1px solid #ddd0;
+}
+
+.tabs-left>li.nav-item {
+    float: none;
+    margin-bottom: 2px;
+    margin-right: -1px;
+    line-height: 11px;
+}
+
+.tabs-left>li.nav-item>.nav-link.active:focus {
+    background: #ffc356;
+    color: #141313;
+}
+
+.tabs-left>li.nav-item>.nav-link {
+    margin-right: 0;
+    display: block;
+    border-radius: 0;
+    background: #4584af;
+    color: #fff;
+    padding: 7px;
+    font-size: 13px;
+    line-height: 15px;
+    text-transform: none;
+    width: 100%;
+    text-align: start;
+}
+
+.tabs-left>li.nav-item>.nav-link.active,
+.tabs-left>li.nav-item>.nav-link.active:hover,
+.tabs-left>li.nav-item>.nav-link.active:focus {
+    background: #ffc356;
+    color: #141313;
+    border-radius: 4px 0 0 4px;
+    border-bottom: none;
+}
+
+
+.tabs-left>li.nav-item.disabled>.nav-link,
+.tabs-left>li.nav-item.disabled>.nav-link:hover,
+.tabs-left>li.nav-item.disabled>.nav-link:focus {
+    background: #f4f4f4;
+    color: #8e8e8e;
+    border-radius: 4px 0 0 4px;
+    border-bottom: none;
+}
+
+/***** End Vertical Tabs *****/
+/***** fieldset *****/
+fieldset.scheduler-border {
+    padding: 10px 15px;
+}
+
+legend.scheduler-border {
+    background-color: #fff;
+    margin-top: -23px;
+}
+
+/***** End fieldset *****/
